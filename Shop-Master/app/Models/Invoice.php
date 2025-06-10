@@ -3,16 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Invoice extends Model
 {
-    public function store()
-        {
-            return $this->belongsTo(Store::class);
-        }
+    use HasFactory;
 
-public function payment()
-        {
-            return $this->hasOne(Payment::class);
-        }
+    protected $fillable = [
+        'store_id',
+        'amount',
+        'description',
+        'is_paid',
+    ];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
 }
