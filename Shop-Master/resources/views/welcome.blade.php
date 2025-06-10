@@ -8,6 +8,10 @@
     <title>صفحه اصلی</title>
 </head>
 <body class="bg-gray-800" >
-    
+    {{-- Navbar --}}
+    <div class="navabr bg-white shadow-sm h-[80px] p-4 flex items-center" dir="rtl">
+        <a class="btn btn-ghost text-xl mx-4" href="#">صفحه اصلی</a>
+        <a class="btn btn-ghost text-xl mx-4" href="#">ورود / ثبت نام</a>
+    </div>
 </body>
 </html>
