@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>صفحه اصلی</title>
 </head>
-<body>
+<body class="bg-gray-800" >
     
 </body>
 </html>
