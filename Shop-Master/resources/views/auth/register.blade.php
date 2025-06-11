@@ -51,6 +51,9 @@
       <button type="submit" class="w-full bg-navy text-white py-2 rounded-xl hover:bg-sky transition">
         ثبت‌نام
       </button>
+          <br>
+        <br>
+        <a class="px-auto text-blue-600 hover:underline" href="{{route('showLogin')}}">ورود</a>
     </form>
   </div>
 </section>
