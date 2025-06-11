@@ -7,8 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', [AuthController::class,'dashboard'])->middleware('auth')->name('dashboard');
+Route::post('/dashboard', [AuthController::class,'dashboard'])->middleware('auth')->name('dashboard');
+
 // For Get and Post Login
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 
 // For Get and Post Register
