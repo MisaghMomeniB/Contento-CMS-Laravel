@@ -1,4 +1,4 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
@@ -73,7 +73,7 @@ s<!DOCTYPE html>
         <p class="text-lg leading-relaxed">ما تیمی متشکل از طراحان، توسعه‌دهندگان و متخصصان بازاریابی هستیم که با هدف کمک به رشد کسب‌وکارهای دیجیتال فعالیت می‌کنیم.</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/500x300" class="rounded-xl" alt="درباره ما">
+        <img src="https://ibrandagency.ir/wp-content/uploads/2024/12/aa.webp" class="rounded-xl" alt="درباره ما">
       </div>
     </div>
   </section>
