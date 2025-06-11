@@ -40,8 +40,8 @@
         <input type="text" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
-        <label class="block mb-1">ایمیل</label>
-        <input type="email" class="w-full p-3 rounded-xl border" required>
+        <label class="block mb-1">شماره همراه</label>
+        <input type="tel" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
         <label class="block mb-1">رمز عبور</label>
