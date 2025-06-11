@@ -13,3 +13,4 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');
 
 // For Get and Post Register
 Route::get('/register', [AuthController::class, 'showRegister'])->name('showRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
