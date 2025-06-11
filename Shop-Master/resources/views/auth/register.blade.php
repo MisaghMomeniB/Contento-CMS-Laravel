@@ -34,18 +34,19 @@
     <section class="py-12 px-4 bg-gray-50" id="register">
   <div class="container mx-auto max-w-md">
     <h3 class="text-3xl font-bold text-center mb-6">ثبت‌نام</h3>
-    <form class="bg-white p-6 rounded-2xl shadow-md">
+    <form method="POST" action="{{route('register')}}" class="bg-white p-6 rounded-2xl shadow-md">
+        @csrf
       <div class="mb-4">
         <label class="block mb-1">نام و نام خانوادگی</label>
-        <input type="text" class="w-full p-3 rounded-xl border" required>
+        <input type="text" name="name" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
         <label class="block mb-1">شماره همراه</label>
-        <input type="tel" class="w-full p-3 rounded-xl border" required>
+        <input type="tel" name="phone_number" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
         <label class="block mb-1">رمز عبور</label>
-        <input type="password" class="w-full p-3 rounded-xl border" required>
+        <input type="password" name="password" class="w-full p-3 rounded-xl border" required>
       </div>
       <button type="submit" class="w-full bg-navy text-white py-2 rounded-xl hover:bg-sky transition">
         ثبت‌نام
