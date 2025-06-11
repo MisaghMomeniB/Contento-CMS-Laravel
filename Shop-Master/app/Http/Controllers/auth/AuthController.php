@@ -31,8 +31,19 @@ class AuthController extends Controller
         $credentials = $request->only('phone_number', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            $user = Auth::user();
+            if ($user->role === 'admin') 
+        {
+            return redirect()->route('adminDashboard');
+        } elseif($user->role === 'owner') {
+            return redirect()->route('dashboard');
+        } else {
+            Auth::logout();
+            return redirect()->route('showLogin')->withErrors(['role' => 'نقش کاربر نامعتبر است']);
         }
+        }
+
+        
     }
 
     public function register(Request $request)
@@ -50,5 +61,9 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('showLogin')->with('success','ثبت نام با موفقیت انجام شد');
+    }
+
+    public function adminDashboard() {
+        return view('auth.adminDashboard');
     }
 }
