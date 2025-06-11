@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +26,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('showRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/logout', function() {
+Route::post('/logout', function() {
     Auth::logout();
     return redirect()->route('showLogin');
 })->name('logout');
