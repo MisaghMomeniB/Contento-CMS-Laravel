@@ -7,9 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin Dashboard
-
-
 // User Dashboard
 Route::get('/dashboard', [AuthController::class,'dashboard'])->middleware('auth')->name('dashboard');
 Route::post('/dashboard', [AuthController::class,'dashboard'])->middleware('auth')->name('dashboard');
