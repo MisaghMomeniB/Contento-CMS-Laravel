@@ -24,3 +24,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 // For Get and Post Register
 Route::get('/register', [AuthController::class, 'showRegister'])->name('showRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/logout', function() {
+    Auth::logout();
+    return redirect()->route('showLogin');
+})->name('logout');
