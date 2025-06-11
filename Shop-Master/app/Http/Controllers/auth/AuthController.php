@@ -4,6 +4,7 @@ namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,8 +14,25 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    Public Function showRegister() {
+    public function dashboard()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('showLogin');
+        }
+        return view('auth.dashboard');
+    }
+
+    public Function showRegister() {
         return view('auth.register');
+    }
+    // Login Post
+    public function login(Request $request)
+    {
+        $credentials = $request->only('phone_number', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('dashboard');
+        }
     }
 
     public function register(Request $request)
