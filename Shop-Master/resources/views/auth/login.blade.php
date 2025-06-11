@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>صفحه فرود سرویس</title>
+  <title>ورود به حساب کاربری</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -34,14 +34,15 @@
     <section class="py-12 px-4 bg-white" id="login">
   <div class="container mx-auto max-w-md">
     <h3 class="text-3xl font-bold text-center mb-6">ورود</h3>
-    <form class="bg-gray-100 p-6 rounded-2xl shadow-md">
+    <form method="POST" action="{{route('login')}}" class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        @csrf
       <div class="mb-4">
-        <label class="block mb-1">رمز عبور</label>
-        <input type="password" class="w-full p-3 rounded-xl border" required>
+        <label class="block mb-1">شماره همراه</label>
+        <input type="tel" name="phone_number" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
         <label class="block mb-1">رمز عبور</label>
-        <input type="password" class="w-full p-3 rounded-xl border" required>
+        <input type="password" name="password" class="w-full p-3 rounded-xl border" required>
       </div>
       <button type="submit" class="w-full bg-navy text-white py-2 rounded-xl hover:bg-sky transition">
         ورود
