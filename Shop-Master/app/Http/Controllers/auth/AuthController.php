@@ -12,6 +12,6 @@ class AuthController extends Controller
     }
 
     Public Function showRegister() {
-        return view('');
+        return view('auth.register');
     }
 }
