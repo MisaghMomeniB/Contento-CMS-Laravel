@@ -63,7 +63,14 @@ class AuthController extends Controller
         return redirect()->route('showLogin')->with('success','ثبت نام با موفقیت انجام شد');
     }
 
-    public function adminDashboard() {
-        return view('auth.adminDashboard');
+    public function adminDashboard(Request $request) {
+        $section = $request->get('section', '');
+
+        $users = [];
+        if ($section === 'users') {
+            $users = User::all();
+        }
+
+        return view('auth.adminDashboard', compact('section','users'));
     }
 }
