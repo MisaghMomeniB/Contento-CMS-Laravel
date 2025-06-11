@@ -36,6 +36,7 @@
         <h1 class="text-2xl font-bold">ارائه دهنده خدمات دیجیتال</h1>
         <nav class="space-x-4 space-x-reverse">
             <a href="#services" class="hover:text-sky transition">خدمات</a>
+            <a href="{{route('showLogin')}}" class="hover:text-sky transition">ورود</a>
             <a href="#about" class="hover:text-sky transition">درباره ما</a>
             <a href="#contact" class="hover:text-sky transition">تماس با ما</a>
         </nav>
