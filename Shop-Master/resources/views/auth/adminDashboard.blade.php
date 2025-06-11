@@ -60,6 +60,13 @@
                             تنظیمات
                         </a>
                     </li>
+                    
+        <form action="{{route('logout')}}" action="POST">
+            @csrf
+            <button type="submit" class="bg-red-500 text-white px-4 py-2 mr-8 mt-4 rounded hover:bg-red-600" >
+                خروج
+            </button>
+        </form>
                 </ul>
             </nav>
         </aside>

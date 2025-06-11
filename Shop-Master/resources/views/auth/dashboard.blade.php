@@ -34,7 +34,7 @@
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                             </svg>
-                            تیکت ها
+                            تیکت های شما
                         </a>
                          <li class="mb-1">
                         <a href="#" class="block py-2 px-4 hover:bg-blue-700 flex items-center">
@@ -53,6 +53,12 @@
                             تنظیمات
                         </a>
                     </li>
+                            <form action="{{route('logout')}}" action="POST">
+            @csrf
+            <button type="submit" class="bg-red-500 text-white px-4 py-2 mr-8 mt-4 rounded hover:bg-red-600" >
+                خروج
+            </button>
+        </form>
                 </ul>
             </nav>
         </aside>
