@@ -36,8 +36,8 @@
     <h3 class="text-3xl font-bold text-center mb-6">ورود</h3>
     <form class="bg-gray-100 p-6 rounded-2xl shadow-md">
       <div class="mb-4">
-        <label class="block mb-1">ایمیل</label>
-        <input type="email" class="w-full p-3 rounded-xl border" required>
+        <label class="block mb-1">رمز عبور</label>
+        <input type="password" class="w-full p-3 rounded-xl border" required>
       </div>
       <div class="mb-4">
         <label class="block mb-1">رمز عبور</label>
@@ -46,6 +46,9 @@
       <button type="submit" class="w-full bg-navy text-white py-2 rounded-xl hover:bg-sky transition">
         ورود
       </button>
+      <br>
+      <br>
+        <a class="px-auto text-blue-600 hover:underline" href="{{route('showRegister')}}">ثبت نام</a>
     </form>
   </div>
 </section>
