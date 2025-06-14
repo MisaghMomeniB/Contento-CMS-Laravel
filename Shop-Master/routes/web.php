@@ -32,3 +32,6 @@ Route::post('/logout', function() {
     Auth::logout();
     return redirect()->route('showLogin');
 })->name('logout');
+
+Route::get('/tickets/create', [TicketController::class, 'create'])->name('tickets.create');
+Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.store');

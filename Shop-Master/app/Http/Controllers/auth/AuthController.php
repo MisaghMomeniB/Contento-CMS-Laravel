@@ -71,7 +71,7 @@ class AuthController extends Controller{
         $users = User::latest()->take(50)->get();
         $stores = \App\Models\Store::all();
         $tickets = []; // Ticket::latest()->take(50)->get();
-        $invoices = []; // Invoice::latest()->take(50)->get();
+        $invoices = \App\Models\Invoice::with('store')->latest()->take(50)->get();
 
         return view('auth.adminDashboard', compact('stores', 'users', 'tickets', 'invoices'));
     }
