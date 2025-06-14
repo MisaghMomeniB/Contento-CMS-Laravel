@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <!-- سمت راست: فرم -->
+    <!-- سمت راست: فرم ثبت‌نام -->
     <div class="w-full md:w-1/2 p-8 md:p-10">
       <h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">ثبت‌نام</h2>
 
@@ -36,7 +36,7 @@
 
         <div>
           <label class="block text-gray-700 mb-1">نام کامل</label>
-          <input type="text" name="name" placeholder="مثلاً میثاق مومنی" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <input type="text" name="name" placeholder="مثلاً احسان مومنی" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
         </div>
 
         <div>
@@ -52,6 +52,18 @@
         <div>
           <label class="block text-gray-700 mb-1">تکرار رمز عبور</label>
           <input type="password" name="password_confirmation" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <!-- کپچا -->
+        <div>
+          <label class="block text-gray-700 mb-1">کد امنیتی</label>
+          <div class="flex items-center">
+            <img src="{{ captcha_src('flat') }}" alt="captcha" class="ml-4 cursor-pointer rounded" onclick="this.src='{{ captcha_src('flat') }}?'+Math.random()">
+            <input type="text" name="captcha" placeholder="کد را وارد کنید" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          </div>
+          @error('captcha')
+            <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span>
+          @enderror
         </div>
 
         <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">ثبت‌نام</button>
