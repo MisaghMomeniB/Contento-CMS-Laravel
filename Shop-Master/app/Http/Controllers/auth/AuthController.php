@@ -63,13 +63,14 @@ class AuthController extends Controller{
     }
 
     public function adminDashboard(Request $request) {
-        $section = $request->get('section', '');
-
-        $users = [];
-        if ($section === 'users') {
-            $users = User::all();
+        if (!Auth::check()) {
+            return redirect()->route('showLogin');
         }
 
-        return view('auth.adminDashboard', compact('section','users'));
+        $users = User::latest()->take(50)->get();
+        $tickets = []; // Ticket::latest()->take(50)->get();
+        $invoices = []; // Invoice::latest()->take(50)->get();
+
+        return view('auth.adminDashboard', compact('users','tickets','invoices'));
     }
 }
