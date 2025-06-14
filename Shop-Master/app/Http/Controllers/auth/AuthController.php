@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Invoice;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller{
@@ -68,9 +69,29 @@ class AuthController extends Controller{
         }
 
         $users = User::latest()->take(50)->get();
+        $stores = \App\Models\Store::all();
         $tickets = []; // Ticket::latest()->take(50)->get();
         $invoices = []; // Invoice::latest()->take(50)->get();
 
-        return view('auth.adminDashboard', compact('users','tickets','invoices'));
+        return view('auth.adminDashboard', compact('stores', 'users', 'tickets', 'invoices'));
     }
+
+public function storeInvoice(Request $request)
+{
+    $request->validate([
+        'store_id' => 'required|exists:stores,id',
+        'amount' => 'required|numeric|min:0',
+        'description' => 'nullable|string',
+        'is_paid' => 'nullable|boolean',
+    ]);
+
+    Invoice::create([
+        'store_id' => $request->store_id,
+        'amount' => $request->amount,
+        'description' => $request->description,
+        'is_paid' => $request->has('is_paid'),
+    ]);
+
+    return back()->with('success', 'فاکتور با موفقیت ثبت شد.');
+}
 }

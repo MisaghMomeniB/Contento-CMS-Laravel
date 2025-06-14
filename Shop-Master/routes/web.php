@@ -13,9 +13,7 @@ Route::get('/admin/dashboard', [AuthController::class, 'adminDashboard'])
 ->middleware('auth')
 ->name('adminDashboard');
 
-Route::post('/invoices/store', function() {
-    return view('create_invoice');
-})->name('createinvoice');
+Route::post('/admin/invoices/create', [AuthController::class, 'storeInvoice'])->name('createinvoice');
 
 // User Dashboard
 Route::get('/dashboard', [AuthController::class,'dashboard'])->middleware('auth')->name('dashboard');
