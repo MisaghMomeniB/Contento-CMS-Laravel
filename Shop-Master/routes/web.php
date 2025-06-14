@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
