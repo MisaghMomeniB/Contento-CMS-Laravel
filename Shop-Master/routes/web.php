@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\TicketController;
@@ -36,3 +37,7 @@ Route::post('/logout', function() {
 
 Route::get('/tickets/create', [TicketController::class, 'create'])->name('tickets.create');
 Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.store');
+
+// Payment Method
+Route::get('/payment', [PaymentController::class, 'pay'])->name('payment');
+Route::get('/payment/verify', [PaymentController::class, 'verify'])->name('payment.verify');
