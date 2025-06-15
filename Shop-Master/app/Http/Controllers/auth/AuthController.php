@@ -29,9 +29,9 @@ class AuthController extends Controller{
     public function login(Request $request)
     {
             $request->validate([
-        'captcha' => 'required|captcha'
-            ], [
-                'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
+                'captcha' => 'required|captcha'
+                    ], [
+                        'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
             ]);
 
         $credentials = $request->only('phone_number', 'password');
@@ -54,10 +54,10 @@ class AuthController extends Controller{
 
     public function register(Request $request)
     {
-                    $request->validate([
-        'captcha' => 'required|captcha'
-            ], [
-                'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
+            $request->validate([
+                'captcha' => 'required|captcha'
+                    ], [
+                        'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
             ]);
         $request->validate([
             'name'=>'required|string|max:50',
