@@ -1,0 +1,11 @@
+[90m= [39m[34;4mApp\Models\User[39;24m {#6251
+    [34mid[39m: [35m1[39m,
+    [34mname[39m: "[32mمیثاق مومنی بشیوسقه[39m",
+    [34mphone_number[39m: "[32m09964658050[39m",
+    #[33mpassword[39m: "[32m$2y$12$I7IAM7D8JxIsGuEJ3vV.XusrRU9rFlAhRWbqspyLwFx7HkimvYAgC[39m",
+    [34mrole[39m: "[32madmin[39m",
+    #[33mremember_token[39m: [36mnull[39m,
+    [34mcreated_at[39m: "[32m2025-06-14 14:45:58[39m",
+    [34mupdated_at[39m: "[32m2025-06-14 14:45:58[39m",
+  }
+
