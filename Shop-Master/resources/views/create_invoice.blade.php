@@ -75,10 +75,10 @@
 
                         <!-- اگر یوزر به یک store متصل است -->
                        <select name="store_id" class="...">
-    @foreach ($stores as $store)
-        <option value="{{ $store->id }}">{{ $store->name }}</option>
-    @endforeach
-</select>
+                            @foreach ($stores as $store)
+                                <option value="{{ $store->id }}">{{ $store->name }}</option>
+                            @endforeach
+                        </select>
 
                         <div>
                             <label class="block text-gray-700 font-medium mb-1">مبلغ (تومان)</label>
