@@ -22,41 +22,35 @@ class AuthController extends Controller{
         return view('auth.dashboard');
     }
 
-    public function showRegister() {
+    public Function showRegister() {
         return view('auth.register');
     }
     // Login Post
     public function login(Request $request)
-{
-    $request->validate([
-        'captcha' => 'required|captcha'
-    ], [
-        'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
-    ]);
+    {
+            $request->validate([
+                'captcha' => 'required|captcha'
+                    ], [
+                        'captcha.captcha' => 'کد امنیتی وارد شده نادرست است.'
+            ]);
 
-    $credentials = $request->only('phone_number', 'password');
+        $credentials = $request->only('phone_number', 'password');
 
-    if (Auth::attempt($credentials)) {
-        $user = Auth::user(); // گرفتن کاربر لاگین شده
-
-        if ($user->hasRole('admin')) {
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            if ($user->role === 'admin') 
+        {
             return redirect()->route('adminDashboard');
-        }
-
-        if ($user->hasRole('owner')) {
+        } elseif($user->role === 'owner') {
             return redirect()->route('dashboard');
+        } else {
+            Auth::logout();
+            return redirect()->route('showLogin')->withErrors(['role' => 'نقش کاربر نامعتبر است']);
+        }
         }
 
-        // اگر نقش خاصی نداشت
-        return redirect('/login')->with('info', 'نقش کاربر مشخص نشده است.');
+        
     }
-
-    // اگر لاگین ناموفق بود
-    return back()->withErrors([
-        'phone_number' => 'شماره یا رمز عبور اشتباه است.'
-    ])->withInput();
-}
-
 
     public function register(Request $request)
     {
