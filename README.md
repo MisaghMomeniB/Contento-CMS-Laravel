@@ -8,3 +8,8 @@
 ---
 - Config and edit .environment file for database and system
 - Create Database / Migrations
+  - Users Table
+  - Categories Table
+  - Product Table
+  - Invoice and Invoice Item Table
+  - Payment Table
