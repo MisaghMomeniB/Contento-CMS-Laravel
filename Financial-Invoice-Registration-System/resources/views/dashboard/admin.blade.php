@@ -31,6 +31,43 @@
       </form>
     </aside>
 
+<div id="customer-list" class="hidden bg-white p-6 rounded-xl shadow-lg mt-6 border border-gray-200">
+  <!-- اینجا AJAX محتوا رو وارد می‌کنه -->
+  <div class="text-center text-gray-400">در حال بارگذاری...</div>
+</div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btnCustomers = document.getElementById("btn-customers");
+        const customerList = document.getElementById("customer-list");
+
+        let isLoaded = false;
+
+        btnCustomers.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // اگر لیست قبلاً بارگذاری نشده، AJAX بفرست
+          if (!isLoaded) {
+            fetch("{{ route('admin.users.list') }}")
+              .then(response => response.text())
+              .then(html => {
+                customerList.innerHTML = html;
+                customerList.classList.remove("hidden");
+                isLoaded = true;
+              })
+              .catch(error => {
+                customerList.innerHTML = "<p class='text-red-500'>خطا در بارگذاری مشتریان.</p>";
+                customerList.classList.remove("hidden");
+              });
+          } else {
+            customerList.classList.toggle("hidden");
+          }
+        });
+      });
+    </script>
+
+
 </body>
 
 </html>
