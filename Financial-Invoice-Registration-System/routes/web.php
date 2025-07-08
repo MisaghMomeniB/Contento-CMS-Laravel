@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,6 @@ Route::get('/admin/dashboard/create-category', function() {
 Route::get('/admin/dashboard/create-invoice', function() {
     return view("dashboard.createInvoice");
 })->name("createInvoice");
+
+// Test
+Route::get('/customers', [UserController::class, 'index'])->name('users.index');
