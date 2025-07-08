@@ -4,28 +4,29 @@
     <!-- فرم ثبت‌نام -->
     <section class="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow-md">
         <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">فرم ثبت‌نام</h2>
-        <form action="#" method="POST" class="space-y-4">
+        <form action="{{route("register")}}" method="POST" class="space-y-4">
+            @csrf
             <div>
-                <label class="block mb-1 text-gray-700">نام کامل</label>
-                <input type="text" name="fullname"
+                <label class="block mb-1 text-gray-700">نام شما : </label>
+                <input type="text" name="first_name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
             </div>
             <div>
-                <label class="block mb-1 text-gray-700">ایمیل</label>
-                <input type="email" name="email"
+                <label class="block mb-1 text-gray-700">نام خانوادگی شما : </label>
+                <input type="text" name="last_name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
             </div>
             <div>
-                <label class="block mb-1 text-gray-700">رمز عبور</label>
+                <label class="block mb-1 text-gray-700">شماره همراه شما : </label>
+                <input type="tel" name="mobile"
+                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required>
+            </div>
+            <div>
+                <label class="block mb-1 text-gray-700">رمز عبور : </label>
                 <input type="password" name="password"
-                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    required>
-            </div>
-            <div>
-                <label class="block mb-1 text-gray-700">تأیید رمز عبور</label>
-                <input type="password" name="confirm_password"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
             </div>
