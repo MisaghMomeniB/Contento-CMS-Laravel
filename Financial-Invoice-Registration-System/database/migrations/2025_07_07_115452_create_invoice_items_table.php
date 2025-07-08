@@ -12,16 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('invoice_items', function (Blueprint $table) {
-            $table->id();
+           $table->id();
             $table->foreignId('invoice_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->string('product_name');
-            $table->string('product_price');
-            $table->string('description');
-            $table->string('quantity');
-            $table->string('unit_price');
-            $table->string('discount');
-            $table->string('total');
+
+            $table->string('product_name'); // فقط در صورتی که بخوای نام کالا ذخیره بشه حتی اگر محصول حذف شد
+            $table->decimal('product_price', 10, 2);
+            $table->text('description')->nullable();
+
+            $table->unsignedInteger('quantity');
+            $table->decimal('unit_price', 10, 2);
+            $table->decimal('discount', 10, 2)->default(0);
+            $table->decimal('total', 10, 2);
+
             $table->timestamps();
         });
     }
