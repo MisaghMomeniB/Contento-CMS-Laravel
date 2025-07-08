@@ -21,31 +21,16 @@
         <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">دسته بندی ها</a>
         <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">فاکتور ها</a>
       </nav>
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="mt-6 px-4">
+        @csrf
+        <button type="submit"
+          class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded transition duration-200">
+          خروج
+        </button>
+      </form>
     </aside>
   </div>
-
-  <!-- لیست کاربران -->
-  {{-- <section id="users-section" class="hidden">
-    <h1 class="text-2xl font-bold mb-4">لیست مشتریان</h1>
-    <table class="min-w-full bg-white shadow rounded">
-      <thead class="bg-gray-100">
-        <tr class="text-right">
-          <th class="py-2 px-4">#</th>
-          <th class="py-2 px-4">نام</th>
-          <th class="py-2 px-4">ایمیل</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($users as $user)
-      <tr class="border-b hover:bg-gray-50">
-        <td class="py-2 px-4">{{ $loop->iteration }}</td>
-        <td class="py-2 px-4">{{ $user->first_name }}</td>
-        <td class="py-2 px-4">{{ $user->mobile }}</td>
-      </tr>
-    @endforeach
-      </tbody>
-    </table>
-  </section> --}}
 
 
 </body>
