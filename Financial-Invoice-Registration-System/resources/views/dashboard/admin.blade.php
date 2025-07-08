@@ -100,7 +100,8 @@
     <!-- فیلتر -->
     <div class="mb-6 flex flex-col sm:flex-row items-center gap-4">
       <label for="statusFilter" class="text-sm font-medium text-gray-700 whitespace-nowrap">فیلتر بر اساس مشتری:</label>
-      <select id="statusFilter" class="border rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <select id="statusFilter"
+        class="border rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
         <option value="all">همه</option>
         <option value="hoghughi">حقوقی</option>
         <option value="haghighi">حقیقی</option>
@@ -130,9 +131,12 @@
             </td>
             <td class="p-3 border border-gray-300">09123456789</td>
             <td class="p-3 border border-gray-300 flex flex-wrap gap-2 justify-end">
-              <button class="bg-golden text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">ویرایش</button>
-              <button class="delete-btn bg-red-500 text-white px-3 py-1 rounded hover:shadow transition whitespace-nowrap">حذف</button>
-              <button class="bg-blue-300 text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">جزئیات</button>
+              <button
+                class="bg-golden text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">ویرایش</button>
+              <button
+                class="delete-btn bg-red-500 text-white px-3 py-1 rounded hover:shadow transition whitespace-nowrap">حذف</button>
+              <button
+                class="bg-blue-300 text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">جزئیات</button>
             </td>
           </tr>
 
@@ -145,9 +149,12 @@
             </td>
             <td class="p-3 border border-gray-300">02188887777</td>
             <td class="p-3 border border-gray-300 flex flex-wrap gap-2 justify-end">
-              <button class="bg-golden text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">ویرایش</button>
-              <button class="delete-btn bg-red-500 text-white px-3 py-1 rounded hover:shadow transition whitespace-nowrap">حذف</button>
-              <button class="bg-blue-300 text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">جزئیات</button>
+              <button
+                class="bg-golden text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">ویرایش</button>
+              <button
+                class="delete-btn bg-red-500 text-white px-3 py-1 rounded hover:shadow transition whitespace-nowrap">حذف</button>
+              <button
+                class="bg-blue-300 text-navy px-3 py-1 rounded hover:shadow transition whitespace-nowrap">جزئیات</button>
             </td>
           </tr>
         </tbody>
