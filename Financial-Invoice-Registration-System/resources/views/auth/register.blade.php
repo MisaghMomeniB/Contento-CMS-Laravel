@@ -33,7 +33,9 @@
             <button type="submit"
                 class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">ثبت‌نام</button>
         </form>
-        <a href="/login"><p class="text-blue-600 hover:text-blue-800" >حساب دارید ؟ وارد شوید</p></a>
+        <a href="/login">
+            <p class="text-blue-600 hover:text-blue-800">حساب دارید ؟ وارد شوید</p>
+        </a>
     </section>
 
 </div>

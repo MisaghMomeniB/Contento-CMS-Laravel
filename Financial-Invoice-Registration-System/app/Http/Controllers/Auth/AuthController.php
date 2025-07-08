@@ -33,6 +33,12 @@ class AuthController extends Controller
         return redirect()->route('showLogin');
     }
 
+    // showLoginForm / View
+    public function showLoginForm()
+    {
+        return view("auth.login");
+    }
+
     // loginForm / Request
     public function login(LoginRequest $request)
     {
@@ -44,6 +50,7 @@ class AuthController extends Controller
         }
     }
 
+    // Logout Form / Done
     public function logout()
     {
         Auth::logout();
