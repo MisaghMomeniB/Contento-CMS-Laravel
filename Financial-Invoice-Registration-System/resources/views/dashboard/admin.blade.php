@@ -16,7 +16,7 @@
     <aside class="w-64 bg-blue-800 shadow-lg">
       <div class="p-6 text-xl text-white font-bold">پنل مدیریت</div>
       <nav class="p-4 space-y-2">
-        <a href="{{ route('users.index') }}" class="text-white block px-4 py-2 rounded hover:bg-blue-600">مشتریان</a>
+        <a href="#" id="btn-customers" class="text-white block px-4 py-2 rounded hover:bg-blue-600">مشتریان</a>
         <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">محصولات</a>
         <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">دسته بندی ها</a>
         <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">فاکتور ها</a>
@@ -30,8 +30,48 @@
         </button>
       </form>
     </aside>
+
+    <!-- لیست مشتریان -->
+    <main id="users-section" class="hidden flex-1 overflow-y-auto p-6">
+      <section class="bg-white rounded shadow max-w-5xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-4 text-right">لیست مشتریان</h1>
+        <table class="min-w-full bg-white shadow rounded text-right">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="py-2 px-4">#</th>
+              <th class="py-2 px-4">نام</th>
+              <th class="py-2 px-4">نام خانوادگی</th>
+              <th class="py-2 px-4">موبایل</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($users as $user)
+        <tr class="border-b hover:bg-gray-50">
+          <td class="py-2 px-4">{{ $loop->iteration }}</td>
+          <td class="py-2 px-4">{{ $user->first_name }}</td>
+          <td class="py-2 px-4">{{ $user->last_name }}</td>
+          <td class="py-2 px-4">{{ $user->mobile }}</td>
+        </tr>
+      @endforeach
+          </tbody>
+        </table>
+      </section>
+    </main>
+
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnCustomers = document.getElementById('btn-customers');
+      const usersSection = document.getElementById('users-section');
+
+      btnCustomers.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        usersSection.classList.toggle('hidden');
+      });
+    });
+  </script>
 
 </body>
 
