@@ -55,8 +55,8 @@
       <nav class="flex gap-5 text-sm items-center">
         <a href="dash.html" class="hover:text-golden transition">داشبورد</a>
         <a href="create_customer_haghighi.html" class="hover:text-golden transition">مشتریان</a>
-        <a href="create_product.html" class="hover:text-golden transition">محصولات</a>
-        <a href="create_category.html" class="hover:text-golden transition">دسته‌بندی‌ها</a>
+        <a href="{{ route("createProduct") }}" class="hover:text-golden transition">محصولات</a>
+        <a href="{{route("createCategory")}}" class="hover:text-golden transition">دسته‌بندی‌ها</a>
         <a href="create_invoice.html" class="hover:text-golden transition">فاکتورها</a>
 
         <form method="POST" action="{{ route('logout') }}" class="m-0 p-0">
