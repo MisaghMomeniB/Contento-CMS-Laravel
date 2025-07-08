@@ -16,6 +16,7 @@ class DashboardController extends Controller
     public function fetchUsers(Request $request)
     {
         $users = User::all();
-        return view("admin.partials.users-list", compact("users"))->render();
+        $index = User::find($request->user_id);
+        return view("admin.partials.users-list", compact("users", "index"))->render();
     }
 }

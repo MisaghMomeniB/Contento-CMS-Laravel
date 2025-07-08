@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $users = User::latest()->get();
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function show(User $user)
+    {
+        $users = User::latest()->get();
+        return view('admin.users.show', compact('users'));
+    }
+
+    public function edit(User $user)
+    {
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $user->update($request->only(['first_name', 'last_name', 'mobile', 'user_type']));
+        return redirect()->route('admin.users.index')->with('success', 'اطلاعات با موفقیت به‌روزرسانی شد.');
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'مشتری با موفقیت حذف شد.');
+    }
+}
