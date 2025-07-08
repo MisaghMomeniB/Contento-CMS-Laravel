@@ -21,8 +21,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboard / Admin
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'show'])->name('admin.dashboard');
     Route::get('admin/users/list', [DashboardController::class,'fetchUsers'])->name('admin.users.list');
+});
+
+// CRUD User
+Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+    Route::resource('users', UserController::class);
 });
