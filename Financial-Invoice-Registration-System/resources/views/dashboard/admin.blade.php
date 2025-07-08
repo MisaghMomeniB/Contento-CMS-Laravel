@@ -31,48 +31,6 @@
       </form>
     </aside>
 
-    <!-- لیست مشتریان -->
-    <main id="users-section" class="hidden flex-1 overflow-y-auto p-6">
-      <section class="bg-white rounded shadow max-w-5xl mx-auto p-6">
-        <h1 class="text-2xl font-bold mb-4 text-right">لیست مشتریان</h1>
-        <table class="min-w-full bg-white shadow rounded text-right">
-          <thead class="bg-gray-100">
-            <tr>
-              <th class="py-2 px-4">#</th>
-              <th class="py-2 px-4">نام</th>
-              <th class="py-2 px-4">نام خانوادگی</th>
-              <th class="py-2 px-4">موبایل</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($users as $user)
-        <tr class="border-b hover:bg-gray-50">
-          <td class="py-2 px-4">{{ $loop->iteration }}</td>
-          <td class="py-2 px-4">{{ $user->first_name }}</td>
-          <td class="py-2 px-4">{{ $user->last_name }}</td>
-          <td class="py-2 px-4">{{ $user->mobile }}</td>
-        </tr>
-      @endforeach
-          </tbody>
-        </table>
-      </section>
-    </main>
-
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const btnCustomers = document.getElementById('btn-customers');
-      const usersSection = document.getElementById('users-section');
-
-      btnCustomers.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        usersSection.classList.toggle('hidden');
-      });
-    });
-  </script>
-
 </body>
 
 </html>
