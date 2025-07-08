@@ -10,14 +10,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::latest()->get();
+        $users = User::all();
         return view('admin.users.index', compact('users'));
     }
 
     public function show(User $user)
     {
-        $users = User::latest()->get();
-        return view('admin.users.show', compact('users'));
+        $users = User::all();
+        return view('admin.users.show', compact('user'));
     }
 
     public function edit(User $user)
