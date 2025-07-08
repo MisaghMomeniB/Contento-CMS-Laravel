@@ -8,12 +8,12 @@ Route::get('/', function () {
 });
 
 // Auth / Register
-Route::get('/register', [AuthController::class, 'showRegisterForm']);
-Route::post('/register', [AuthController::class, 'register']);
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('showRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 // Auth / Login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('showLogin');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Auth / Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
