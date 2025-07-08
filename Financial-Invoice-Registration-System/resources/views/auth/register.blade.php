@@ -44,6 +44,22 @@
             e.preventDefault();
 
             const first_name = document.getElementById('first_name').value.trim();
+            const last_name = document.getElementById('last_name').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const password = document.getElementById('password');
+            const errorBox = document.getElementById('registerError')
+
+            errorBox.textContent = "";
+
+            if (!first_name || !last_name || !mobile || !password) {
+                errorBox.textContent = "لطفا فیلد را کامل کنید";
+                return;
+            }
+
+            if (password.length < 8) {
+                errorBox.textContent = "رمز عبور حداقل 8 کاراکتر باید باشد";
+                return;
+            }
         })
     </script>
 
