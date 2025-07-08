@@ -34,12 +34,22 @@ class AuthController extends Controller
     }
 
     // loginForm / Request
-    public function login(LoginRequest $request) {
+    public function login(LoginRequest $request)
+    {
         $validate = $request->only('mobile', 'password');
 
         if (Auth::attempt($validate)) {
             $request->session()->regenerate();
             return redirect()->route('home');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect()->route('showLogin');
     }
 }
