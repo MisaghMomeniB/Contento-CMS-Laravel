@@ -30,3 +30,9 @@ Route::get('/admin/dashboard/create-product', function () {
 Route::get('/admin/dashboard/create-category', function() {
     return view('dashboard.createCategory');
 })->name('createCategory');
+
+Route::get('/admin/dashboard/create-invoice', function() {
+    return view("dashboard.createInvoice");
+})->name("createInvoice");
+
+// Route::get

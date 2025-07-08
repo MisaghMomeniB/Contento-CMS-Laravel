@@ -57,7 +57,7 @@
         <a href="create_customer_haghighi.html" class="hover:text-golden transition">مشتریان</a>
         <a href="{{ route("createProduct") }}" class="hover:text-golden transition">محصولات</a>
         <a href="{{route("createCategory")}}" class="hover:text-golden transition">دسته‌بندی‌ها</a>
-        <a href="create_invoice.html" class="hover:text-golden transition">فاکتورها</a>
+        <a href="{{ route("createInvoice") }}" class="hover:text-golden transition">فاکتورها</a>
 
         <form method="POST" action="{{ route('logout') }}" class="m-0 p-0">
           @csrf
