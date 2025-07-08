@@ -18,7 +18,7 @@
                         <a href="/" class="text-gray-700 hover:text-blue-600 transition">صفحه اصلی</a>
                     </li>
                     <li>
-                        <a href="/register" class="text-gray-700 hover:text-blue-600 transition">ورود به سامانه</a>
+                        <a href="/login" class="text-gray-700 hover:text-blue-600 transition">ورود به سامانه</a>
                     </li>
                 </ul>
             </nav>
