@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,8 +21,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboard / Admin / Test
-Route::get('/admin/dashboard', function () {
-    return view('dashboard.admin');
-})->name('dashboard');
+Route::get('/dashboard/admin', [DashboardController::class, 'show'])->name('dashboard.show');
+
 // Test
-Route::get('/customers', [UserController::class, 'index'])->name('users.index');
+Route::get('/dashboard/admin', [DashboardController::class, 'index'])->name('dashboard.admin');
