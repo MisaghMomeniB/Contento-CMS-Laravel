@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('invoice_id')->constrained()->onDelete('cascade');
-            $table->string('payment_date');
-            $table->string('amount');
-            $table->string('method');
-            $table->string('reference_number');
-            $table->string('notes');
+            $table->date('payment_date');
+            $table->decimal('amount', 10, 2);
+            $table->enum('method', ['cash', 'card', 'bank_transfer']);
+            $table->string('reference_number')->unique();
+            $table->enum('status', ['pending', 'completed', 'failed'])->default('pending');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
