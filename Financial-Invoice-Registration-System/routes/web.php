@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 // Auth / Register
 Route::get('/register', [AuthController::class, 'showRegisterForm']);
+Route::post('/register', [AuthController::class, 'register']);
