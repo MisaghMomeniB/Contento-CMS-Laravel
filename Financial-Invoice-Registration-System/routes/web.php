@@ -23,18 +23,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/admin/dashboard', function () {
     return view('dashboard.admin');
 })->name('dashboard');
-
-Route::get('/admin/dashboard/create-product', function () {
-    return view ('dashboard.createProduct');
-})->name('createProduct');
-
-Route::get('/admin/dashboard/create-category', function() {
-    return view('dashboard.createCategory');
-})->name('createCategory');
-
-Route::get('/admin/dashboard/create-invoice', function() {
-    return view("dashboard.createInvoice");
-})->name("createInvoice");
-
 // Test
 Route::get('/customers', [UserController::class, 'index'])->name('users.index');
