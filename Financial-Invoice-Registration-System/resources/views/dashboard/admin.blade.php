@@ -31,10 +31,11 @@
       </form>
     </aside>
 
-<div id="customer-list" class="hidden bg-white p-6 rounded-xl shadow-lg mt-6 border border-gray-200">
-  <!-- اینجا AJAX محتوا رو وارد می‌کنه -->
-  <div class="text-center text-gray-400">در حال بارگذاری...</div>
-</div>
+    <div id="customer-list" class="hidden bg-white p-6 rounded-xl shadow-lg mt-6 border border-gray-200 justify-center mr-16">
+      <!-- اینجا AJAX محتوا رو وارد می‌کنه -->
+      <div class="text-center text-gray-400">در حال بارگذاری...</div>
+    </div>
+
 
 
     <script>
