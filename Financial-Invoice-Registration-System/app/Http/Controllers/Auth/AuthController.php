@@ -3,16 +3,30 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Kavenegar\KavenegarApi;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Services\KavenegarService;
 use App\Http\Requests\LoginRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
+    public function sendOtp(Request $request, KavenegarService $kavenegar) {
+        $phone = $request->input('mobile');
+        $code = rand(100000, 999999);
+
+        Cache::put('otp_', $phone, $code, now()->addMinutes(5));
+        $message = "کد ورود شما : $code";
+        $result = $kavenegar->sendOtp($phone, $message);
+
+        return response()->json(['message' => 'OTP sent', 'kavenegar' => $result]);
+    }
+
     // showRegisterForm / View
     public function showRegisterForm()
     {
