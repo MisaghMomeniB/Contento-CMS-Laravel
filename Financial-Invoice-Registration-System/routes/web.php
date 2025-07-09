@@ -23,10 +23,19 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Dashboard / Admin
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'show'])->name('admin.dashboard');
-    Route::get('admin/users/list', [DashboardController::class,'fetchUsers'])->name('admin.users.list');
+    // Route::get('admin/users/list', [DashboardController::class,'fetchUsers'])->name('admin.users.list');
 });
 
+// User Create / Customer
+Route::get('/admin/dashboard/createCustomerGenuine', function() {
+    return view("admin.users.genuine-store");
+})->name("createCustomerGenuine");
+
+Route::get('/admin/dashboard/createCustomerLegal', function() {
+    return view("admin.users.legal-store");
+})->name("createCustomerLegal");
+
 // CRUD User
-Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
 });
