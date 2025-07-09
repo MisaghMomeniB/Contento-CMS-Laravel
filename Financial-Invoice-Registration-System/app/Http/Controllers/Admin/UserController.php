@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CustomerRequest;
+use App\Http\Requests\RegisterRequest;
 
 class UserController extends Controller
 {
+    public function store(CustomerRequest $request) {
+        Customer::create($request->validated());
+        return redirect()->route("admin.users.list");
+    }
+
     public function index()
     {
         $users = User::all();
