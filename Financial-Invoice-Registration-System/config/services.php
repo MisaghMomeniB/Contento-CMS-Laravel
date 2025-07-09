@@ -13,6 +13,10 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'kavenegar' => [
+        'api_key' => env('KAVENEGAR_API_KEY'),
+    ],
+
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
