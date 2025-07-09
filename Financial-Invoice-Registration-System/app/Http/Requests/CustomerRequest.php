@@ -32,6 +32,7 @@ class CustomerRequest extends FormRequest
             'registration_number'=> 'required',
             'economic_number'=> 'required',
             'address'=> 'required',
+            'user_type'=> 'required',
             'password'=> 'required'
         ];
     }
