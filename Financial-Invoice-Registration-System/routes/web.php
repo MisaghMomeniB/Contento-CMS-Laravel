@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\OtpController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,3 +50,10 @@ Route::prefix('admin/dashboard/customers')->name('admin.customers.')->group(func
     Route::put('/{customer}', [UserController::class, 'update'])->name('updateCustomer');
     Route::delete('/{customer}', [UserController::class, 'destroy'])->name('destroyCustomer');
 });
+
+Route::post('/send-otp', [OtpController::class, 'send'])->name('otp.send');
+Route::post('/verify-otp', [OtpController::class, 'verifyOtp'])->name('otp.verify');
+
+Route::get('/otp-login', function () {
+    return view('auth.otp-login'); // نام view blade
+})->name("otp");
