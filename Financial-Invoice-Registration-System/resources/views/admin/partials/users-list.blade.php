@@ -1,4 +1,7 @@
-<div class="overflow-x-auto">
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<div dir="rtl" class="overflow-x-auto">
     <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
         <thead class="bg-blue-800 text-white text-right">
             <tr>
@@ -22,21 +25,21 @@
                         <div class="flex justify-center gap-2 rtl:flex-row-reverse">
                             {{-- مشاهده --}}
                             <a href="{{ route('admin.users.show', $user->id) }}"
-                               class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded">
+                                class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded">
                                 مشاهده
                             </a>
                             {{-- ویرایش --}}
                             <a href="{{ route('admin.users.edit', $user->id) }}"
-                               class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm px-3 py-1 rounded">
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm px-3 py-1 rounded">
                                 ویرایش
                             </a>
                             {{-- حذف --}}
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST"
-                                  onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
+                                onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                        class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-1 rounded">
+                                    class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-1 rounded">
                                     حذف
                                 </button>
                             </form>
