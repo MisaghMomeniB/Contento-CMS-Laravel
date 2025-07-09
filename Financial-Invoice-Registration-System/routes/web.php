@@ -27,15 +27,25 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // User Create / Customer
-Route::get('/admin/dashboard/createCustomerGenuine', function() {
+Route::get('/admin/dashboard/createCustomerGenuine', function () {
     return view("admin.users.genuine-store");
 })->name("createCustomerGenuine");
 
-Route::get('/admin/dashboard/createCustomerLegal', function() {
+Route::get('/admin/dashboard/createCustomerLegal', function () {
     return view("admin.users.legal-store");
 })->name("createCustomerLegal");
 
 // CRUD User
- Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
+});
+
+// Test
+Route::prefix('admin/dashboard/customers')->name('admin.customers.')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('indexCustomer');
+    Route::post('/store', [UserController::class, 'store'])->name('storeCustomer');
+    Route::get('/{customer}', [UserController::class, 'show'])->name('showCustomer');
+    Route::get('/{customer}/edit', [UserController::class, 'edit'])->name('editCustomer');
+    Route::put('/{customer}', [UserController::class, 'update'])->name('updateCustomer');
+    Route::delete('/{customer}', [UserController::class, 'destroy'])->name('destroyCustomer');
 });
