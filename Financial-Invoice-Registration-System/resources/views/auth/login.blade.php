@@ -23,7 +23,7 @@
                 class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-800 transition">ورود</button>
         </form>
         <a href="/">
-            <p class="text-blue-600 hover:text-blue-800">ورود با رمز یکبار مصرف</p>
+            <a href="{{route("otp")}}"><p class="text-blue-600 hover:text-blue-800">ورود با رمز یکبار مصرف</p></a>
         </a>
         <a href="/register">
             <p class="text-blue-600 hover:text-blue-800">حساب کاربری ندارید ؟ بسازید</p>
