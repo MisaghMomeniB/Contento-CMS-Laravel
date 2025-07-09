@@ -31,7 +31,7 @@
                         <td class="py-2 px-4 text-green-800">{{ $user->user_type ?? 'حقیقی' }}</td>
                         <td class="py-2 px-4">
                             <div class="flex justify-center gap-2 rtl:flex-row-reverse">
-                                <a href="{{ route('admin.users.show', $user->id) }}"
+                                <a href="{{ route('admin.users.index', $user->id) }}"
                                     class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded">
                                     مشاهده
                                 </a>
