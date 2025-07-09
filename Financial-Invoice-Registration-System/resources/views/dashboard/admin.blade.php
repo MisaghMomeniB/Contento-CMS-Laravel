@@ -24,7 +24,7 @@
               class="absolute right-full top-0 mt-2 hidden group-hover:block bg-white text-gray-800 rounded shadow-lg min-w-[180px] space-y-1 z-10">
               <li><a href="{{route("admin.users.index")}}" class="transition block px-4 py-2 hover:bg-gray-100">لیست
                   مشتریان</a></li>
-              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">ثبت مشتری حقیقی</a></li>
+              <li><a href="{{route("createCustomerTest")}}" class="transition block px-4 py-2 hover:bg-gray-100">ثبت مشتری حقیقی</a></li>
               <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">ثبت مشتری حقوقی</a></li>
             </ul>
           </li>
