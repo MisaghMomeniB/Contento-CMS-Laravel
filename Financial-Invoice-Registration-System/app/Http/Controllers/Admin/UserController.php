@@ -11,9 +11,11 @@ use App\Http\Requests\RegisterRequest;
 
 class UserController extends Controller
 {
-    public function store(CustomerRequest $request) {
+    public function store(CustomerRequest $request)
+    {
+
         Customer::create($request->validated());
-        return redirect()->route("admin.users.list");
+        return redirect()->route("admin.dashboard");
     }
 
     public function index()
