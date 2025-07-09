@@ -12,11 +12,4 @@ class DashboardController extends Controller
     {
         return view("dashboard.admin");
     }
-
-    public function fetchUsers(Request $request)
-    {
-        $users = User::all();
-        $index = User::find($request->user_id);
-        return view("admin.partials.users-list", compact("users", "index"))->render();
-    }
 }
