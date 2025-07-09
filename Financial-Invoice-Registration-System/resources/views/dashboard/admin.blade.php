@@ -16,10 +16,45 @@
     <aside class="w-64 bg-blue-800 shadow-lg">
       <div class="p-6 text-xl text-white font-bold">پنل مدیریت</div>
       <nav class="p-4 space-y-2">
-        <a href="#" id="btn-customers" class="text-white block px-4 py-2 rounded hover:bg-blue-600">مشتریان</a>
-        <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">محصولات</a>
-        <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">دسته بندی ها</a>
-        <a href="#" class="text-white block px-4 py-2 rounded hover:bg-blue-600">فاکتور ها</a>
+        <ul class="space-y-2">
+
+          <li class="group relative">
+            <a href="#" class="transition text-white block px-4 py-2 rounded hover:bg-blue-600">مشتریان</a>
+            <ul
+              class="absolute right-full top-0 mt-2 hidden group-hover:block bg-white text-gray-800 rounded shadow-lg min-w-[180px] space-y-1 z-10">
+              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">لیست مشتریان</a></li>
+              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">ثبت مشتری حقیقی</a></li>
+              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">ثبت مشتری حقوقی</a></li>
+            </ul>
+          </li>
+
+          <li class="group relative">
+            <a href="#" class="transition text-white block px-4 py-2 rounded hover:bg-blue-600">محصولات</a>
+            <ul
+              class="absolute right-full top-0 mt-2 hidden group-hover:block bg-white text-gray-800 rounded shadow-lg min-w-[180px] space-y-1 z-10">
+              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">لیست محصولات</a></li>
+              <li><a href="#" class="transition block px-4 py-2 hover:bg-gray-100">ثبت محصول</a></li>
+            </ul>
+          </li>
+
+          <li class="group relative">
+            <a href="#" class="transition text-white block px-4 py-2 rounded hover:bg-blue-600">دسته‌بندی‌ها</a>
+            <ul
+              class="absolute right-full top-0 mt-2 hidden group-hover:block bg-white text-gray-800 rounded shadow-lg min-w-[180px] space-y-1 z-10">
+              <li><a href="#" class="block px-4 py-2 transition hover:bg-gray-100">ساخت دسته‌بندی</a></li>
+            </ul>
+          </li>
+
+          <li class="group relative">
+            <a href="#" class="text-white block px-4 py-2 transition rounded hover:bg-blue-600">فاکتورها</a>
+            <ul
+              class="absolute right-full top-0 mt-2 hidden group-hover:block bg-white text-gray-800 rounded shadow-lg min-w-[180px] space-y-1 z-10">
+              <li><a href="#" class="block px-4 py-2 transition hover:bg-gray-100">لیست فاکتور ها</a></li>
+              <li><a href="#" class="block px-4 py-2 transition hover:bg-gray-100">ثبت فاکتور</a></li>
+            </ul>
+          </li>
+
+        </ul>
       </nav>
 
       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="mt-6 px-4">
@@ -31,7 +66,9 @@
       </form>
     </aside>
 
-    <div id="customer-list" class="hidden bg-white p-6 rounded-xl shadow-lg mt-6 border border-gray-200 justify-center mr-16">
+
+    <div id="customer-list"
+      class="hidden bg-white p-6 rounded-xl shadow-lg mt-6 border border-gray-200 justify-center mr-16">
       <!-- اینجا AJAX محتوا رو وارد می‌کنه -->
       <div class="text-center text-gray-400">در حال بارگذاری...</div>
     </div>
