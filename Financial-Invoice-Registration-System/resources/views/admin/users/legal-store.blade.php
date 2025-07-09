@@ -34,18 +34,19 @@
     <div class="max-w-3xl mx-auto bg-white p-6 rounded shadow">
         <h1 class="text-2xl font-bold text-navy mb-6">فرم ثبت مشتری حقوقی</h1>
 
-        <form onsubmit="return validateForm()" class="space-y-5" id="customerForm">
+        <form action="{{route("admin.customers.storeCustomer")}}" method="POST" class="space-y-5" id="customerForm">
+            @csrf
             <div>
-                <label for="company_name" class="block mb-1 font-medium">نام فروشنده:</label>
-                <input id="company_name" name="company_name" class="w-full border rounded px-4 py-2" />
+                <label for="first_name" class="block mb-1 font-medium">نام فروشنده:</label>
+                <input id="first_name" name="first_name" class="w-full border rounded px-4 py-2" />
                 <p id="error_company_name" class="text-red-600 text-sm hidden mt-1">
                     لطفاً نام شرکت را وارد کنید.
                 </p>
             </div>
 
             <div>
-                <label for="company_name" class="block mb-1 font-medium">نام خانوادگی فروشنده:</label>
-                <input id="company_name" name="company_name" class="w-full border rounded px-4 py-2" />
+                <label for="last_name" class="block mb-1 font-medium">نام خانوادگی فروشنده:</label>
+                <input id="last_name" name="last_name" class="w-full border rounded px-4 py-2" />
                 <p id="error_company_name" class="text-red-600 text-sm hidden mt-1">
                     لطفاً نام شرکت را وارد کنید.
                 </p>
@@ -76,8 +77,8 @@
             </div>
 
             <div>
-                <label for="registration_number" class="block mb-1 font-medium">شماره اقتصادی:</label>
-                <input id="registration_number" name="registration_number" class="w-full border rounded px-4 py-2" />
+                <label for="economic_number" class="block mb-1 font-medium">شماره اقتصادی:</label>
+                <input id="economic_number" name="economic_number" class="w-full border rounded px-4 py-2" />
                 <p id="error_registration_number" class="text-red-600 text-sm hidden mt-1">
                     شماره ثبت را وارد کنید.
                 </p>
@@ -100,8 +101,16 @@
             </div>
 
             <div>
-                <label for="mobile" class="block mb-1 font-medium">کد پستی:</label>
-                <input id="mobile" name="mobile" class="w-full border rounded px-4 py-2" />
+                <label for="password" class="block mb-1 font-medium">رمز عبور:</label>
+                <input id="password" name="password" class="w-full border rounded px-4 py-2" />
+                <p id="error_mobile" class="text-red-600 text-sm hidden mt-1">
+                    شماره همراه معتبر نیست.
+                </p>
+            </div>
+
+            <div>
+                <label for="postal_code" class="block mb-1 font-medium">کد پستی:</label>
+                <input id="postal_code" name="postal_code" class="w-full border rounded px-4 py-2" />
                 <p id="error_mobile" class="text-red-600 text-sm hidden mt-1">
                     شماره همراه معتبر نیست.
                 </p>
@@ -116,21 +125,14 @@
                 </p>
             </div>
 
-            <!-- <div>
-          <label for="register_date" class="block mb-1 font-medium"
-            >تاریخ ثبت:</label
-          >
-          <input
-            type="text"
-            id="register_date"
-            name="register_date"
-            class="datepicker w-full border rounded px-4 py-2"
-            placeholder="انتخاب تاریخ"
-          />
-          <p id="error_register_date" class="text-red-600 text-sm hidden mt-1">
-            تاریخ ثبت را وارد کنید.
-          </p>
-        </div> -->
+            <div>
+                <label for="register_date" class="block mb-1 font-medium">تاریخ ثبت:</label>
+                <input type="text" id="register_date" name="register_date"
+                    class="datepicker w-full border rounded px-4 py-2" placeholder="انتخاب تاریخ" />
+                <p id="error_register_date" class="text-red-600 text-sm hidden mt-1">
+                    تاریخ ثبت را وارد کنید.
+                </p>
+            </div>
 
             <div class="flex justify-end">
                 <a class="p-4 rounded text-white bg-golden mx-4" href="{{route("admin.dashboard")}}">بازگشت </a>
