@@ -26,6 +26,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/users/list', [DashboardController::class,'fetchUsers'])->name('admin.users.list');
 });
 
+// User Create / Customer
+Route::get('/admin/dashboard/createCustomer', function() {
+    return view("admin.users.store");
+})->name("createCustomerTest");
+
 // CRUD User
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
