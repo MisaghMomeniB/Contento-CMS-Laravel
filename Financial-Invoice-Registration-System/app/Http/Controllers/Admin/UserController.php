@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(RegisterRequest $request, User $user)
     {
         $user->update($request->only(['first_name', 'last_name', 'mobile', 'user_type']));
         return redirect()->route('admin.users.index')->with('success', 'اطلاعات با موفقیت به‌روزرسانی شد.');
