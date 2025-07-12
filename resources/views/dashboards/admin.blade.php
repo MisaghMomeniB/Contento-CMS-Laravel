@@ -17,7 +17,7 @@
         <div class="flex gap-4">
             <a href="{{route("admin.products.create")}}" class="text-white bg-blue-600 rounded p-4 justify-between hover:bg-blue-700">ثبت محصول</a>
             <a href="{{route("admin.invoices.create")}}" class="text-white bg-yellow-600 rounded p-4 justify-between hover:bg-yellow-700">ثبت فاکتور</a>
-            <a href="{{route("admin.categories.index")}}" class="text-white bg-green-600 rounded p-4 justify-between hover:bg-green-700">ثبت دسته بندی</a>
+            <a href="{{route("admin.categories.create")}}" class="text-white bg-green-600 rounded p-4 justify-between hover:bg-green-700">ثبت دسته بندی</a>
         </div>
     </nav>
 
