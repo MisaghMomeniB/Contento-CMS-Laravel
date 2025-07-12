@@ -58,8 +58,12 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
 
 Route::middleware(['auth', 'role:حقیقی'])->group(function () {
     Route::get('/real/dashboard', [RealController::class, 'index'])->name('real.dashboard');
+    Route::get('/real/invoices', [RealController::class, 'invoices'])->name('real.invoices.index');
+    Route::get('/real/invoices/{invoice}', [RealController::class, 'showInvoice'])->name('real.invoices.show');
 });
 
 Route::middleware(['auth', 'role:حقوقی'])->group(function () {
     Route::get('/legal/dashboard', [LegalController::class, 'index'])->name('legal.dashboard');
+    Route::get('/legal/invoices', [LegalController::class, 'invoices'])->name('legal.invoices.index');
+    Route::get('/legal/invoices/{invoice}', [LegalController::class, 'showInvoice'])->name('legal.invoices.show');
 });
