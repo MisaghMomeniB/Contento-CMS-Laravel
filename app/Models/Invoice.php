@@ -28,6 +28,11 @@ class Invoice extends Model
         return $this->hasMany(InvoiceItem::class);
     }
 
+    public function getTotalAmountAttribute()
+    {
+        return $this->items->sum('total_price');
+    }
+
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class);
