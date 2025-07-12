@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/register', [RegisterController::class, 'showForm'])->name('register.form');
+Route::get('/register', [RegisterController::class, 'showForm'])->middleware('guest')->name('register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/login', [LoginController::class, 'showForm'])->name('login.form');
+Route::get('/login', [LoginController::class, 'showForm'])->middleware('guest')->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
