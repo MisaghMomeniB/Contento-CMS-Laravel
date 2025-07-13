@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ثبت فاکتور</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 font-sans">
     <div class="container mx-auto p-6 max-w-4xl">
         <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">ثبت فاکتور جدید</h1>
@@ -16,7 +18,7 @@
                 <div>
                     <label for="invoice_number" class="block text-sm font-medium text-gray-700">شماره فاکتور</label>
                     <input type="text" name="invoice_number" id="invoice_number" required
-                           class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     @error('invoice_number')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -25,7 +27,7 @@
                 <div>
                     <label for="invoice_date" class="block text-sm font-medium text-gray-700">تاریخ فاکتور</label>
                     <input type="date" name="invoice_date" id="invoice_date" required
-                           class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     @error('invoice_date')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -34,7 +36,7 @@
                 <div>
                     <label for="user_id" class="block text-sm font-medium text-gray-700">کاربر</label>
                     <select name="user_id" id="user_id" required
-                            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="" disabled selected>انتخاب کاربر</option>
                         @foreach($users as $user)
                             <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -48,7 +50,7 @@
                 <div>
                     <label for="invoice_type" class="block text-sm font-medium text-gray-700">نوع فاکتور</label>
                     <select name="invoice_type" id="invoice_type" required
-                            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="" disabled selected>انتخاب نوع</option>
                         <option value="پرداختی">پرداختی</option>
                         <option value="مرجوعی">مرجوعی</option>
@@ -61,7 +63,7 @@
                 <div>
                     <label for="status" class="block text-sm font-medium text-gray-700">وضعیت</label>
                     <select name="status" id="status" required
-                            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="" disabled selected>انتخاب وضعیت</option>
                         <option value="پرداخت شده">پرداخت شده</option>
                         <option value="پرداخت نشده">پرداخت نشده</option>
@@ -74,7 +76,7 @@
                 <div>
                     <label for="discount" class="block text-sm font-medium text-gray-700">تخفیف (اختیاری)</label>
                     <input type="number" name="discount" id="discount" step="0.01" min="0"
-                           class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     @error('discount')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -84,7 +86,7 @@
             <div class="mt-4">
                 <label for="description" class="block text-sm font-medium text-gray-700">توضیحات (اختیاری)</label>
                 <textarea name="description" id="description" rows="4"
-                          class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                 @error('description')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -99,11 +101,12 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700">محصول</label>
                             <select name="items[0][product_id]" required
-                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 product-select"
-                                    onchange="updateProductPrice(0)">
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 product-select"
+                                onchange="updateProductPrice(0)">
                                 <option value="" disabled selected>انتخاب محصول</option>
                                 @foreach($products as $product)
-                                    <option value="{{ $product->id }}" data-price="{{ $product->price }}">{{ $product->name }}</option>
+                                    <option value="{{ $product->id }}" data-price="{{ $product->price }}">
+                                        {{ $product->name }}</option>
                                 @endforeach
                             </select>
                             @error('items.0.product_id')
@@ -114,8 +117,8 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700">قیمت</label>
                             <input type="number" name="items[0][product_price]" required step="0.01" min="0"
-                                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 product-price"
-                                   oninput="calculateTotalPrice(0)">
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 product-price"
+                                oninput="calculateTotalPrice(0)">
                             @error('items.0.product_price')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror
@@ -124,7 +127,7 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700">دسته‌بندی</label>
                             <select name="items[0][category_id]" required
-                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                                 <option value="" disabled selected>انتخاب دسته‌بندی</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -138,8 +141,8 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700">تخفیف (اختیاری)</label>
                             <input type="number" name="items[0][discount]" step="0.01" min="0"
-                                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 discount"
-                                   oninput="calculateTotalPrice(0)">
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 discount"
+                                oninput="calculateTotalPrice(0)">
                             @error('items.0.discount')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror
@@ -148,7 +151,7 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700">قیمت کل</label>
                             <input type="number" name="items[0][total_price]" required step="0.01" min="0" readonly
-                                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100">
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100">
                             @error('items.0.total_price')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror
@@ -157,13 +160,14 @@
                         <div class="md:col-span-2 lg:col-span-3">
                             <label class="block text-sm font-medium text-gray-700">توضیحات (اختیاری)</label>
                             <textarea name="items[0][description]" rows="3"
-                                      class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                             @error('items.0.description')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
-                    <button type="button" onclick="removeItem(this)" class="text-red-600 hover:text-red-800 mt-2 hidden">حذف آیتم</button>
+                    <button type="button" onclick="removeItem(this)"
+                        class="text-red-600 hover:text-red-800 mt-2 hidden">حذف آیتم</button>
                 </div>
             </div>
 
@@ -171,10 +175,9 @@
             <div class="mt-6 flex space-x-4 space-x-reverse">
                 <a href="{{route("admin.dashboard")}}"><button type="button" onclick="addItem()"
                         class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
-                    بازگشت 
-                </button></a>
-                <button type="submit"
-                        class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
+                        بازگشت
+                    </button></a>
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
                     ثبت فاکتور
                 </button>
             </div>
@@ -265,4 +268,5 @@
         }
     </script>
 </body>
+
 </html>
