@@ -20,10 +20,12 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             display: none;
         }
+
         .dropdown-item {
             padding: 8px 12px;
             cursor: pointer;
         }
+
         .dropdown-item:hover {
             background-color: #f3f4f6;
         }
