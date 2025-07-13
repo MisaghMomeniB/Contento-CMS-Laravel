@@ -22,9 +22,9 @@
 
         <!-- Navigation -->
         <nav class="space-y-4">
-            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت دسته‌بندی</a>
-            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت محصول</a>
-            <a href="#" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت فاکتور</a>
+            <a href="{{route("admin.categories.create")}}" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت دسته‌بندی</a>
+            <a href="{{route("admin.products.create")}}" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت محصول</a>
+            <a href="{{route("admin.invoices.create")}}" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">ثبت فاکتور</a>
         </nav>
 
         <!-- Logout -->
