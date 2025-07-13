@@ -74,6 +74,8 @@
                                     <td class="px-4 py-2 border-b">
                                         <a href="{{ route('legal.invoices.show', $invoice->id) }}"
                                             class="text-blue-600 hover:underline">نمایش</a>
+                                        <a href="{{ route('payment.test', $invoice->id) }}"
+                                            class="text-green-600 hover:underline">پرداخت</a>
                                     </td>
                                 </tr>
                             @endforeach

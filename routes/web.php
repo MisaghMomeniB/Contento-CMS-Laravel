@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/payment', function () {
+    return view('payment.test');
+})->name('payment.test');
+
+Route::get('payment/verify', function () {
+    return view('payment.verify');
+})->name('payment.verify');
+
 Route::get('/register', [RegisterController::class, 'showForm'])->middleware('guest')->name('register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
