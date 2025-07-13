@@ -40,8 +40,7 @@
                         <td class="p-2 border">{{ $invoice->invoice_type }}</td>
                         <td class="p-2 border">{{ number_format($invoice->discount) }} تومان</td>
                         <td class="p-2 border">
-                            <span
-                                class="{{ $invoice->status === 'پرداخت شده' ? 'text-green-600' : 'text-red-600' }}">
+                            <span class="{{ $invoice->status === 'پرداخت شده' ? 'text-green-600' : 'text-red-600' }}">
                                 {{ $invoice->status }}
                             </span>
                         </td>
