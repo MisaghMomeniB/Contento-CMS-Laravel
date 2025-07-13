@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-tr from-indigo-50 to-blue-100 min-h-screen flex">
     <!-- Sidebar -->
     <aside class="w-64 bg-indigo-600 text-white flex flex-col shadow-lg">
@@ -19,9 +21,11 @@
             <p class="text-sm text-indigo-200 mt-1">{{ auth()->user()->type }}</p>
         </div>
         <nav class="flex-1 p-4 space-y-3">
-            <a href="{{ route('legal.dashboard') }}" class="block py-2 px-4 rounded bg-indigo-500 hover:bg-indigo-600 transition">داشبورد</a>
+            <a href="{{ route('legal.dashboard') }}"
+                class="block py-2 px-4 rounded bg-indigo-500 hover:bg-indigo-600 transition">داشبورد</a>
             <a href="#" class="block py-2 px-4 rounded hover:bg-indigo-500 transition">پروفایل</a>
-            <a href="{{ route('legal.invoices.index') }}" class="block py-2 px-4 rounded hover:bg-indigo-500 transition">فاکتورها</a>
+            <a href="{{ route('legal.invoices.index') }}"
+                class="block py-2 px-4 rounded hover:bg-indigo-500 transition">فاکتورها</a>
             <a href="#" class="block py-2 px-4 rounded hover:bg-indigo-500 transition">تنظیمات</a>
         </nav>
         <form method="POST" action="{{ route('logout') }}" class="p-4 border-t border-indigo-500">
@@ -61,13 +65,17 @@
                             @foreach ($invoices as $invoice)
                                 <tr class="hover:bg-gray-50">
                                     <td class="px-4 py-2 border-b">{{ $invoice->invoice_number }}</td>
-                                    <td class="px-4 py-2 border-b">{{ \Carbon\Carbon::parse($invoice->invoice_date)->format('Y-m-d') }}</td>
+                                    <td class="px-4 py-2 border-b">
+                                        {{ \Carbon\Carbon::parse($invoice->invoice_date)->format('Y-m-d') }}</td>
                                     <td class="px-4 py-2 border-b">{{ $invoice->invoice_type }}</td>
                                     <td class="px-4 py-2 border-b">{{ number_format($invoice->total_amount) }}</td>
                                     <td class="px-4 py-2 border-b">{{ number_format($invoice->discount) }}</td>
                                     <td class="px-4 py-2 border-b">{{ $invoice->status }}</td>
                                     <td class="px-4 py-2 border-b">
-                                        <a href="{{ route('legal.invoices.show', $invoice->id) }}" class="text-blue-600 hover:underline">نمایش</a>
+                                        <a href="{{ route('legal.invoices.show', $invoice->id) }}"
+                                            class="text-blue-600 hover:underline">نمایش</a>
+                                        <a href="{{ route('payment.test', $invoice->id) }}"
+                                            class="text-green-600 hover:underline">پرداخت</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -85,7 +93,8 @@
             </div>
             <div class="bg-white shadow rounded-lg p-5 border-r-4 border-yellow-400">
                 <h3 class="text-gray-700 font-semibold">مبلغ کل</h3>
-                <p class="text-2xl font-bold mt-2 text-yellow-500">{{ number_format($invoices->sum('total_amount')) }} تومان</p>
+                <p class="text-2xl font-bold mt-2 text-yellow-500">{{ number_format($invoices->sum('total_amount')) }}
+                    تومان</p>
             </div>
             <div class="bg-white shadow rounded-lg p-5 border-r-4 border-blue-400">
                 <h3 class="text-gray-700 font-semibold">وضعیت فعال</h3>
@@ -94,4 +103,5 @@
         </section>
     </main>
 </body>
+
 </html>
