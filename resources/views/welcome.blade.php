@@ -150,11 +150,14 @@
     <!-- فوتر -->
     <footer class="bg-gray-800 py-8">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-300 mb-4">&copy; 2025 تمامی حقوق محفوظ است.</p>
+            <p class="text-gray-300 mb-4">میثاق مومنی بشیوسقه</p>
             <div class="flex justify-center space-x-4 space-x-reverse">
-                <a href="#" class="hover:text-blue-400">فیسبوک</a>
-                <a href="#" class="hover:text-blue-400">توییتر</a>
-                <a href="#" class="hover:text-blue-400">اینستاگرام</a>
+                <a target="_blank" href="https://x.com/MisaghMomeniB" class="hover:text-blue-400">توییتر</a>
+                <a target="_blank" href="https://github.com/MisaghMomeniB" class="hover:text-blue-400">گیت هاب</a>
+                <a target="_blank" href="https://t.me/MisaghMomeniB" class="hover:text-blue-400">تلگرام</a>
+                <a target="_blank" href="https://instagram.com/misaghmomenib" class="hover:text-blue-400">اینستاگرام</a>
+                <a target="_blank" href="https://www.linkedin.com/in/misaghmomenib/" class="hover:text-blue-400">لینکداین</a>
+                <a target="_blank" href="https://ibrandagency.ir/" class="hover:text-blue-400">آی برند</a>
             </div>
         </div>
     </footer>
