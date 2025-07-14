@@ -138,11 +138,11 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 animate-fadeInUp">با ما در تماس باشید</h2>
             <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                سوالی دارید؟ با ما تماس بگیرید تا در مورد نیازهای شما صحبت کنیم.
+                برای پرسش سوالات و آشنایی با ما، میتونید در شبکه های اجتماعی دنبالمون کنید
             </p>
-            <a href="mailto:info@example.com"
+            <a href="https://ibrandagency.ir/"
                 class="btn inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-                ارسال ایمیل
+                آی برند 
             </a>
         </div>
     </section>
