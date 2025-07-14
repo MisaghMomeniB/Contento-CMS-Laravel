@@ -70,7 +70,7 @@
                     <label class="block font-medium">نوع کاربر:</label>
                     <select name="type"
                         class="w-full mt-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-2">
-                        <option value="">-- انتخاب کنید --</option>
+                        {{-- <option value="">-- انتخاب کنید --</option> --}}
                         <option value="حقیقی" {{ old('type') == 'حقیقی' ? 'selected' : '' }}>حقیقی</option>
                         <option value="حقوقی" {{ old('type') == 'حقوقی' ? 'selected' : '' }}>حقوقی</option>
                     </select>
