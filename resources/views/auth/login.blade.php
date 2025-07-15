@@ -87,9 +87,12 @@
         <div class="w-1/2 bg-[#77BEF0] flex items-center justify-center p-8 overflow-hidden relative">
             <div id="slider-container" class="w-full max-w-lg overflow-hidden rounded-xl">
                 <div id="slider" class="flex">
-                    <img src="https://images.unsplash.com/photo-1544380904-c686aad2fc40?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmV0d29ya3xlbnwwfDJ8MHx8fDI%3D" loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
-                    <img src="https://images.unsplash.com/photo-1642160432858-8e6540b5e5c6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
-                    <img src="https://images.unsplash.com/photo-1656331797721-b593b8f00297?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmV0d29ya3xlbnwwfDJ8MHx8fDI%3D" loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
+                    <img src="https://images.unsplash.com/photo-1544380904-c686aad2fc40?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmV0d29ya3xlbnwwfDJ8MHx8fDI%3D"
+                        loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
+                    <img src="https://images.unsplash.com/photo-1642160432858-8e6540b5e5c6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
+                    <img src="https://images.unsplash.com/photo-1656331797721-b593b8f00297?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmV0d29ya3xlbnwwfDJ8MHx8fDI%3D"
+                        loading="eager" class="w-full flex-shrink-0 object-cover rounded-xl" />
                 </div>
                 <!-- دکمه‌های ناوبری -->
                 <div class="nav-button prev-button">❮</div>
@@ -133,7 +136,7 @@
 
     <!-- اسکریپت اسلایدر -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const slider = document.getElementById("slider");
             const sliderContainer = document.getElementById("slider-container");
             const slides = slider.querySelectorAll('img');
@@ -148,7 +151,7 @@
             function setupSlider() {
                 const containerWidth = sliderContainer.clientWidth;
                 slider.style.width = `${totalSlides * 100}%`;
-                
+
                 slides.forEach(slide => {
                     slide.style.width = `${100 / totalSlides}%`;
                     slide.style.flex = `0 0 ${100 / totalSlides}%`;
@@ -208,11 +211,11 @@
             setupSlider();
             createIndicators();
             startAutoSlide();
-            
+
             // رویدادهای دکمه‌ها
             prevButton.addEventListener("click", prevSlide);
             nextButton.addEventListener("click", nextSlide);
-            
+
             // تنظیم مجدد هنگام تغییر سایز پنجره
             window.addEventListener('resize', setupSlider);
         });
