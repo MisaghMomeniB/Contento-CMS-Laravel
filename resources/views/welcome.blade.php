@@ -32,7 +32,6 @@
 
 <body class="min-h-screen flex flex-col items-center justify-center text-gray-800">
     <div class="text-center p-6 max-w-md">
-        <div class="loader mx-auto mb-6"></div>
         <h1 class="text-2xl font-medium mb-3">در حال بروزرسانی</h1>
         <p class="text-gray-600 mb-6">ما در حال بهبود سرویس‌ها هستیم. به زودی بازمی‌گردیم.</p>
         <p class="text-sm text-gray-500">لطفاً کمی بعد مجدداً بررسی کنید.</p>
