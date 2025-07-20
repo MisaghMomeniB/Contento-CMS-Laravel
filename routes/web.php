@@ -11,9 +11,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
 
 Route::get('/payment', function () {
     return view('payment.test');
@@ -26,7 +26,7 @@ Route::get('payment/verify', function () {
 Route::get('/register', [RegisterController::class, 'showForm'])->middleware('guest')->name('register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/', [LoginController::class, 'showForm'])->middleware('guest')->name('login.form');
+Route::get('/login', [LoginController::class, 'showForm'])->middleware('guest')->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
