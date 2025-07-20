@@ -54,7 +54,7 @@
 
 <!--Banners-->
 <section class="flex justify-center py-6" >
-    <img class="max-w-full h-auto rounded-2xl shadow" src="https://i.pinimg.com/736x/7e/69/07/7e69072f918ba66dd8d9c62cfa406b49.jpg" alt="bannerWebsite">
+    <img class="w-[600px] h-auto rounded-2xl shadow" src="https://minio-tosanscp-2ytxtou5.darkube.app/gb-production/2025-7-8/%D8%A8%D9%86%D8%B1_%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85.psd2.jpg" alt="bannerWebsite">
 </section>
 
 
