@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>میثاق مومنی بشیوسقه | توسعه‌دهنده فول‌استک</title>
+    <title>میثاق مومنی بشیوسقه</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
@@ -59,7 +59,20 @@
 
 
 <!-- Location Section -->
-<section class="max-w-3xl mx-auto mt-12 text-center">
+<div class="flex justify-center items-center gap-x-4">
+    <div class="bg-red-300 h-[70px] w-auto p-2 flex items-center justify-center rounded-2xl shadow hover:bg-red-400 transition">
+        <a href="https://nshn.ir/e8_bfwZIyG5A3E" class="text-center">
+            فروشگاه دوم | مسیریاب گوگل‌مپ <i class="fa-solid fa-location-dot"></i>
+        </a>
+    </div>
+    <div class=" bg-green-300 h-[70px] w-auto p-2 flex items-center justify-center rounded-2xl shadow hover:bg-green-400 transition">
+        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51095.1843395004!2d54.37704117280756!3d36.83172089266038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8349d4bb44853b%3A0xfd797c3f32f58939!2sGorgan%2C%20Golestan%20Province%2C%20Iran!5e0!3m2!1sen!2sfr!4v1753081060756!5m2!1sen!2sfr" class="text-center">
+            فروشگاه اول | مسیریاب نشان <i class="fa-solid fa-location-dot text-gray-700"></i>
+        </a>
+    </div>
+</div>
+
+<!-- <section class="max-w-3xl mx-auto mt-12 text-center">
     <h2 class="text-xl font-bold mb-4 text-gray-700">موقعیت مکانی</h2>
     <div class="rounded-xl overflow-hidden shadow-md border border-gray-200">
         <iframe
@@ -72,7 +85,7 @@
                 title="نقشه موقعیت مکانی">
         </iframe>
     </div>
-</section>
+</section> -->
 
 <!-- Footer -->
 <footer class="mt-12 text-sm text-gray-500">
