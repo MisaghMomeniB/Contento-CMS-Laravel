@@ -42,13 +42,14 @@
 
             <!-- کارت -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-                <img src="https://dkstatics-public.digikala.com/digikala-products/2cf0f972e5a665231a9116b9dca534425e3b9d29_1641642219.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                     alt="محصول" class="w-full h-auto object-cover">
+                <img
+                    src="https://dkstatics-public.digikala.com/digikala-products/2cf0f972e5a665231a9116b9dca534425e3b9d29_1641642219.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
+                    alt="محصول" class="w-full h-auto object-cover">
                 <div class="p-2 group text-right">
                     <h3 class="text-sm font-semibold text-gray-800">OH AJ12</h3>
                     <p class="text-gray-600 mt-2 group-hover:text-red-600 transition-colors">۲۰٬۰۰۰٬۰۰۰ تومان</p>
-                    <p class="text-gray-600 mt-2 transition-colors"><i class="fa-solid fa-chair ml-1"></i> صندلی
-                        اداری</p>
+                    <p class="text-gray-600 mt-2 transition-colors"> صندلی
+                        اداری <i class="fa-solid fa-chair ml-1"></i></p>
                     <p class="text-gray-600 mt-2">افزودن <i class="fa-solid fa-plus"></i></p>
 
                 </div>
@@ -56,13 +57,14 @@
 
             <!-- کارت -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-                <img src="https://dkstatics-public.digikala.com/digikala-products/3c7bba7d22b8a8725c329f6457aa230ce02c94f3_1744120492.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                     alt="محصول" class="w-full h-auto object-cover">
+                <img
+                    src="https://dkstatics-public.digikala.com/digikala-products/3c7bba7d22b8a8725c329f6457aa230ce02c94f3_1744120492.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
+                    alt="محصول" class="w-full h-auto object-cover">
                 <div class="p-2 group text-right">
                     <h3 class="text-sm font-semibold text-gray-800">OH P321</h3>
                     <p class="text-gray-600 mt-2 group-hover:text-red-600 transition-colors">۲۰٬۰۰۰٬۰۰۰ تومان</p>
-                    <p class="text-gray-600 mt-2 transition-colors"><i class="fa-solid fa-chair ml-1"></i> صندلی
-                        اداری
+                    <p class="text-gray-600 mt-2 transition-colors"> صندلی
+                        اداری <i class="fa-solid fa-chair ml-1"></i>
                     </p>
                     <p class="text-gray-600 mt-2">افزودن <i class="fa-solid fa-plus"></i></p>
 
@@ -72,13 +74,14 @@
 
             <!-- کارت -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-                <img src="https://dkstatics-public.digikala.com/digikala-products/882681.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                     alt="محصول" class="w-full h-auto object-cover">
+                <img
+                    src="https://dkstatics-public.digikala.com/digikala-products/882681.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
+                    alt="محصول" class="w-full h-auto object-cover">
                 <div class="p-2 group text-right">
                     <h3 class="text-sm font-semibold text-gray-800">OH D6000</h3>
                     <p class="text-gray-600 mt-2 group-hover:text-red-600 transition-colors">۲۰٬۰۰۰٬۰۰۰ تومان</p>
-                    <p class="text-gray-600 mt-2 transition-colors"><i class="fa-solid fa-chair ml-1"></i> صندلی
-                        اداری</p>
+                    <p class="text-gray-600 mt-2 transition-colors"> صندلی
+                        اداری <i class="fa-solid fa-chair ml-1"></i></p>
                     <p class="text-gray-600 mt-2">افزودن <i class="fa-solid fa-plus"></i></p>
 
 
@@ -88,13 +91,14 @@
             {{-- cards --}}
 
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-                <img src="https://dkstatics-public.digikala.com/digikala-products/2bfe48e1c8e6c2ba00517b1e3baca586777f4e32_1651288510.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                     alt="محصول" class="w-full h-auto object-cover">
+                <img
+                    src="https://dkstatics-public.digikala.com/digikala-products/2bfe48e1c8e6c2ba00517b1e3baca586777f4e32_1651288510.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
+                    alt="محصول" class="w-full h-auto object-cover">
                 <div class="p-2 group text-right">
                     <h3 class="text-sm font-semibold text-gray-800">روتر میکروتیک مدل 941Hap lite</h3>
                     <p class="text-gray-600 mt-2 group-hover:text-red-600 transition-colors">۲۰٬۰۰۰٬۰۰۰ تومان</p>
-                    <p class="text-gray-600 mt-2 transition-colors">تجهیزات شبکه <i
-                            class="fa-solid fa-network-wired ml-1"></i></p>
+                    <p class="text-gray-600 mt-2 transition-colors">تجهیزات شبکه <i class="fa-solid fa-network-wired ml-1"></i>
+                    </p>
                     <p class="text-gray-600 mt-2">افزودن <i class="fa-solid fa-plus"></i></p>
 
 
@@ -104,13 +108,14 @@
             {{-- cards --}}
 
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-                <img src="https://dkstatics-public.digikala.com/digikala-products/08200f2a1ed4ba988c09ee374747472b1d4c0fd5_1619950354.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
-                     alt="محصول" class="w-full h-auto object-cover">
+                <img
+                    src="https://dkstatics-public.digikala.com/digikala-products/08200f2a1ed4ba988c09ee374747472b1d4c0fd5_1619950354.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80"
+                    alt="محصول" class="w-full h-auto object-cover">
                 <div class="p-2 group text-right">
                     <h3 class="text-sm font-semibold text-gray-800">رادیو وایرلس میکروتیک مدل LHG 5 ac </h3>
                     <p class="text-gray-600 mt-2 group-hover:text-red-600 transition-colors">۲۰٬۰۰۰٬۰۰۰ تومان</p>
-                    <p class="text-gray-600 mt-2 transition-colors">تجهیزات شبکه <i
-                            class="fa-solid fa-network-wired ml-1"></i></p>
+                    <p class="text-gray-600 mt-2 transition-colors">تجهیزات شبکه <i class="fa-solid fa-network-wired ml-1"></i>
+                    </p>
                     <p class="text-gray-600 mt-2">افزودن <i class="fa-solid fa-plus"></i></p>
 
 
