@@ -1323,7 +1323,7 @@
                     cart.push(cartItem);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     updateCart();
-                    alert(`محصول "${productName}" با سایز ${size} و رنگ ${color} به سبد خرید اضافه شد`);
+                    // alert(`محصول "${productName}" با سایز ${size} و رنگ ${color} به سبد خرید اضافه شد`);
                 }
 
                 function calculateSubtotal() {
