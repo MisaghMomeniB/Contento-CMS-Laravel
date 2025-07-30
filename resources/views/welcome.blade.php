@@ -15,7 +15,7 @@
         :root {
             --primary-color: #3a56d4;
             --primary-dark: #2f46b8;
-            --secondary-color: #4c6ef5;
+            --secondary-color: #28272C;
             --accent-color: #5c7cfa;
             --text-light: #f8f9fa;
             --text-muted: #6b7280;
@@ -32,6 +32,7 @@
             --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
             --shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.2);
+            --font-size-base: 1rem;
         }
 
         body {
@@ -41,6 +42,7 @@
             color: var(--text-dark);
             overflow-x: hidden;
             transition: margin-right var(--transition-speed) var(--easing);
+            font-size: var(--font-size-base);
         }
 
         .search-bar {
@@ -52,6 +54,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-grow: 1;
         }
 
         .form-label {
@@ -66,6 +69,7 @@
             border: 1px solid var(--text-muted);
             padding: 8px 12px;
             font-size: 0.9rem;
+            margin-right: 12px;
             transition: all 0.2s ease;
             background-color: white;
         }
@@ -85,6 +89,7 @@
         .dropdown-menu {
             padding: 5px;
             text-align: center;
+            font-size: 0.9rem;
         }
 
         .sidebar {
@@ -334,12 +339,10 @@
         .product-card {
             position: relative;
             height: 200px;
-            /* اندازه کوچک‌تر برای کارت */
             overflow: hidden;
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            /* نشانگر کلیک‌پذیری */
         }
 
         .product-card:hover {
@@ -370,8 +373,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.85), transparent 50px);
-            /* سایه ملایم سفید */
+            background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 50px);
             padding: 8px 10px;
             display: flex;
             flex-direction: column;
@@ -382,56 +384,27 @@
             font-size: 0.9rem;
             font-weight: 700;
             margin: 0;
-            color: var(--text-dark);
-            background-color: var(--text-light);
-            padding: 5px;
-            border-radius: 10px;
-            opacity: 40%;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            color: var(--text-light);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
 
         .product-card .product-number {
             font-size: 0.75rem;
             font-weight: 500;
-            color: var(--text-dark);
-            background-color: var(--text-light);
-            padding: 5px;
-            border-radius: 10px;
-            opacity: 40%;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            color: var(--text-light);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
 
         .product-card .card-text {
             font-size: 0.85rem;
             font-weight: 600;
             margin: 0;
-            color: var(--text-dark);
-            background-color: var(--text-light);
-            padding: 5px;
-            border-radius: 10px;
-            opacity: 50%;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            color: var(--text-light);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
 
         .product-card .card-text i {
             margin-left: 4px;
-        }
-
-        .product-card .btn {
-            font-size: 0.75rem;
-            padding: 5px 10px;
-            border-radius: 8px;
-            background: var(--primary-color);
-            border: none;
-            transition: all 0.3s ease;
-            align-self: flex-end;
-            color: white;
-        }
-
-        .product-card .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .cart-sidebar {
@@ -461,6 +434,10 @@
             border-bottom: 1px solid var(--text-muted);
             padding-bottom: 15px;
             margin-bottom: 15px;
+        }
+
+        .cart-header h3 {
+            font-size: 1.25rem;
         }
 
         .cart-item {
@@ -520,6 +497,7 @@
 
         .cart-discount {
             display: flex;
+            flex-direction: column;
             gap: 10px;
             margin-bottom: 15px;
         }
@@ -558,57 +536,98 @@
             margin-top: 15px;
         }
 
-        .number-pad {
-            display: none;
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
+        .quantity-control {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .quantity-btn {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quantity-btn.plus {
+            background: #28a745;
+            color: white;
+        }
+
+        .quantity-btn.plus:hover:not(:disabled) {
+            background: #1e7e34;
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quantity-btn.minus {
+            background: #dc3545;
+            color: white;
+        }
+
+        .quantity-btn.minus:hover:not(:disabled) {
+            background: #b02a37;
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quantity-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .discount-number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-bottom: 10px;
             background: #ffffff;
             border-radius: 12px;
-            padding: 15px;
-            box-shadow: var(--shadow-lg);
-            z-index: 1060;
-            width: 280px;
+            padding: 10px;
+            box-shadow: var(--shadow-sm);
         }
 
-        .number-pad.show {
-            display: grid;
-        }
-
-        .number-pad .btn {
-            font-size: 1.2rem;
-            padding: 15px;
+        .discount-number-pad .btn {
+            font-size: 1rem;
+            padding: 5px;
             border-radius: 8px;
-            margin: 5px;
             background: #f8f9fa;
             border: 1px solid var(--text-muted);
-            transition: all 0.2s ease;
+            transition: all 0.1s ease;
         }
 
-        .number-pad .btn:hover {
+        .discount-number-pad .btn:hover {
             background: var(--primary-color);
             color: white;
             border-color: var(--primary-color);
         }
 
-        .number-pad .btn-clear {
+        .discount-number-pad .btn-clear {
             background: #dc3545;
             color: white;
             border: none;
         }
 
-        .number-pad .btn-clear:hover {
+        .discount-number-pad .btn-clear:hover {
             background: #b02a37;
         }
 
-        .number-pad .btn-enter {
+        .discount-number-pad .btn-enter {
             background: #28a745;
             color: white;
             border: none;
         }
 
-        .number-pad .btn-enter:hover {
-            background: #218838;
+        .discount-number-pad .btn-enter:hover {
+            background: #1e7e34;
         }
 
         @media (max-width: 992px) {
@@ -627,12 +646,12 @@
             }
 
             .main-content {
-                margin-right: 0;
+                margin-right: var(--cart-width);
                 padding: 20px;
             }
 
             .main-content.expanded {
-                margin-right: 0;
+                margin-right: var(--cart-width);
             }
 
             .sidebar-toggle {
@@ -654,21 +673,12 @@
                 right: 0;
             }
 
-            .number-pad {
-                width: 100%;
-                left: 0;
-                bottom: 0;
-                border-radius: 12px 12px 0 0;
-            }
-
             .product-card {
                 height: 180px;
-                /* کوچکتر در موبایل */
             }
 
             .product-card .card-overlay {
-                background: linear-gradient(to top, rgba(255, 255, 255, 0.85), transparent 40px);
-                /* گرادیان کوتاه‌تر */
+                background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 40px);
                 padding: 6px 8px;
                 gap: 3px;
             }
@@ -685,9 +695,35 @@
                 font-size: 0.8rem;
             }
 
-            .product-card .btn {
-                font-size: 0.7rem;
-                padding: 4px 8px;
+            .quantity-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .discount-number-pad .btn {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cart-sidebar {
+                width: 100%;
+            }
+
+            .main-content {
+                padding: 20px;
+                margin-right: 0;
+            }
+
+            .barcode-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .barcode-section input {
+                width: 100%;
             }
         }
 
@@ -756,20 +792,40 @@
         </nav>
     </div>
 
-    <!-- Shopping Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h3>سبد خرید</h3>
+            <div class="barcode-section">
+                <input type="text" class="form-control" id="barcodeInput" name="barcode" placeholder="کد محصول"
+                    aria-label="کد محصول">
+            </div>
         </div>
         <div id="cartItems"></div>
         <div class="cart-footer">
             <div class="cart-discount">
-                <select class="form-select" id="discountType">
-                    <option value="percentage">درصد</option>
-                    <option value="amount">تومان</option>
-                </select>
-                <input type="number" class="form-control" id="discountValue" placeholder="مقدار تخفیف" min="0">
-                <button class="btn btn-primary" id="applyDiscount">اعمال</button>
+                <div class="discount-number-pad">
+                    <button class="btn" data-number="1">۱</button>
+                    <button class="btn" data-number="2">۲</button>
+                    <button class="btn" data-number="3">۳</button>
+                    <button class="btn" data-number="4">۴</button>
+                    <button class="btn" data-number="5">۵</button>
+                    <button class="btn" data-number="6">۶</button>
+                    <button class="btn" data-number="7">۷</button>
+                    <button class="btn" data-number="8">۸</button>
+                    <button class="btn" data-number="9">۹</button>
+                    <button class="btn btn-clear">پاک</button>
+                    <button class="btn" data-number="0">۰</button>
+                    <button class="btn btn-enter">تأیید</button>
+                </div>
+                <div class="d-flex gap-2">
+                    <select class="form-select" id="discountType">
+                        <option value="percentage">درصد</option>
+                        <option value="amount">تومان</option>
+                    </select>
+                    <input type="number" class="form-control" id="discountValue" placeholder="مقدار تخفیف"
+                        min="0">
+                    <button class="btn btn-primary" id="applyDiscount">اعمال</button>
+                </div>
             </div>
             <div class="cart-total-details">
                 <p id="cartSubtotal">جمع کل: ۰ تومان</p>
@@ -777,24 +833,6 @@
                 <p id="cartFinalTotal" class="final-total">مبلغ نهایی: ۰ تومان</p>
             </div>
             <button class="btn btn-success cart-pay-btn" id="payButton">پرداخت</button>
-        </div>
-    </div>
-
-    <!-- Number Pad -->
-    <div class="number-pad" id="numberPad">
-        <div class="d-grid gap-2" style="grid-template-columns: repeat(3, 1fr);">
-            <button class="btn" data-number="1">۱</button>
-            <button class="btn" data-number="2">۲</button>
-            <button class="btn" data-number="3">۳</button>
-            <button class="btn" data-number="4">۴</button>
-            <button class="btn" data-number="5">۵</button>
-            <button class="btn" data-number="6">۶</button>
-            <button class="btn" data-number="7">۷</button>
-            <button class="btn" data-number="8">۸</button>
-            <button class="btn" data-number="9">۹</button>
-            <button class="btn btn-clear">پاک</button>
-            <button class="btn" data-number="0">۰</button>
-            <button class="btn btn-enter">تأیید</button>
         </div>
     </div>
 
@@ -812,6 +850,7 @@
                                         <i class="bi bi-list-ul me-2"></i> دسته‌بندی محصولات
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                        <li><a class="dropdown-item" href="#" role="button">همه دسته‌بندی‌ها</a></li>
                                         <li><a class="dropdown-item active" href="#" role="button">شومیز</a>
                                         </li>
                                         <li><a class="dropdown-item" href="#" role="button">مانتو</a></li>
@@ -824,10 +863,6 @@
                                         <li><a class="dropdown-item" href="#" role="button">لباس خانگی</a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="barcode-section">
-                                    <input type="text" class="form-control" id="barcodeInput" name="barcode"
-                                        placeholder="شماره محصول" aria-label="شماره محصول">
                                 </div>
                             </div>
                         </div>
@@ -845,10 +880,8 @@
                                 class="card-img-top" alt="شومیز">
                             <div class="card-overlay">
                                 <h5 class="card-title">شومیز</h5>
-                                <h5 class="product-number">شماره محصول: 1808</h5>
+                                <h5 class="product-number">کد محصول: 1808</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۱,۲۰۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="1200000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -860,10 +893,8 @@
                                 class="card-img-top" alt="مانتو">
                             <div class="card-overlay">
                                 <h5 class="card-title">مانتو</h5>
-                                <h5 class="product-number">شماره محصول: 1809</h5>
+                                <h5 class="product-number">کد محصول: 1809</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۱,۵۵۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="1550000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -875,10 +906,8 @@
                                 class="card-img-top" alt="شلوار">
                             <div class="card-overlay">
                                 <h5 class="card-title">شلوار</h5>
-                                <h5 class="product-number">شماره محصول: 1810</h5>
+                                <h5 class="product-number">کد محصول: 1810</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۲,۲۰۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="2200000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -890,10 +919,8 @@
                                 class="card-img-top" alt="کت و شلوار">
                             <div class="card-overlay">
                                 <h5 class="card-title">کت و شلوار</h5>
-                                <h5 class="product-number">شماره محصول: 1811</h5>
+                                <h5 class="product-number">کد محصول: 1811</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۳,۰۰۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="3000000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -905,10 +932,8 @@
                                 class="card-img-top" alt="کیف">
                             <div class="card-overlay">
                                 <h5 class="card-title">کیف</h5>
-                                <h5 class="product-number">شماره محصول: 1812</h5>
+                                <h5 class="product-number">کد محصول: 1812</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۳,۰۰۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="3000000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -920,10 +945,8 @@
                                 class="card-img-top" alt="لباس خانگی">
                             <div class="card-overlay">
                                 <h5 class="card-title">لباس خانگی</h5>
-                                <h5 class="product-number">شماره محصول: 1813</h5>
+                                <h5 class="product-number">کد محصول: 1813</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۳,۰۰۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="3000000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -935,10 +958,8 @@
                                 class="card-img-top" alt="شال و روسری">
                             <div class="card-overlay">
                                 <h5 class="card-title">شال و روسری</h5>
-                                <h5 class="product-number">شماره محصول: 1814</h5>
+                                <h5 class="product-number">کد محصول: 1814</h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> ۷۵۰,۰۰۰ تومان</p>
-                                <a href="#" class="btn btn-primary add-to-cart" data-price="750000"
-                                    role="button"><i class="bi bi-bag-plus-fill me-2"></i> افزودن</a>
                             </div>
                         </div>
                     </div>
@@ -981,7 +1002,15 @@
                         <div class="mb-3">
                             <label for="quantityInput" class="form-label">تعداد</label>
                             <p id="stockInfo" class="text-muted mb-2"></p>
-                            <input type="number" class="form-control" id="quantityInput" min="1" required>
+                            <div class="quantity-control">
+                                <input type="number" class="form-control text-center" id="quantityInput"
+                                    min="1" required>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="quantity-btn plus" id="increaseQuantity">+</button>
+                                    <button type="button" class="quantity-btn minus"
+                                        id="decreaseQuantity">-</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -1031,6 +1060,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        function persianToEnglishDigits(str) {
+            return str.replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             try {
                 // عناصر اصلی
@@ -1056,12 +1089,14 @@
                 const discountValue = document.getElementById('discountValue');
                 const applyDiscount = document.getElementById('applyDiscount');
                 const payButton = document.getElementById('payButton');
-                const numberPad = document.getElementById('numberPad');
                 const paymentForm = document.getElementById('paymentForm');
                 const paymentMethod = document.getElementById('paymentMethod');
                 const cardDetails = document.getElementById('cardDetails');
                 const cardNumber = document.getElementById('cardNumber');
                 const confirmPayment = document.getElementById('confirmPayment');
+                const increaseQuantity = document.getElementById('increaseQuantity');
+                const decreaseQuantity = document.getElementById('decreaseQuantity');
+                const discountNumberPad = document.querySelector('.discount-number-pad');
                 let currentProduct = null;
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let currentStock = 0;
@@ -1088,18 +1123,13 @@
                         handleCategorySelection(e.target);
                     }
                     const productCard = e.target.closest('.product-card');
-                    const addToCartBtn = e.target.closest('.add-to-cart');
-                    if (productCard && !addToCartBtn) {
+                    if (productCard) {
                         e.preventDefault();
                         showProductModal(productCard);
                     }
-                    if (addToCartBtn) {
-                        e.preventDefault();
-                        showProductModal(addToCartBtn.closest('.product-card'));
-                    }
                 });
 
-                // فیلتر کردن محصولات بر اساس شماره محصول
+                // فیلتر کردن محصولات بر اساس کد محصول
                 barcodeInput.addEventListener('input', function() {
                     const barcode = barcodeInput.value.trim();
                     const productCards = document.querySelectorAll('#productsContainer .col');
@@ -1114,6 +1144,51 @@
                     });
                 });
 
+                // مدیریت دکمه‌های افزایش و کاهش تعداد
+                function updateQuantityButtons() {
+                    const quantity = parseInt(quantityInput.value) || 1;
+                    decreaseQuantity.disabled = quantity <= 1;
+                    increaseQuantity.disabled = quantity >= currentStock;
+                }
+
+                increaseQuantity.addEventListener('click', function() {
+                    let quantity = parseInt(quantityInput.value) || 1;
+                    if (quantity < currentStock) {
+                        quantityInput.value = quantity + 1;
+                        updateQuantityButtons();
+                    }
+                });
+
+                decreaseQuantity.addEventListener('click', function() {
+                    let quantity = parseInt(quantityInput.value) || 1;
+                    if (quantity > 1) {
+                        quantityInput.value = quantity - 1;
+                        updateQuantityButtons();
+                    }
+                });
+
+                quantityInput.addEventListener('input', function() {
+                    let quantity = parseInt(quantityInput.value) || 1;
+                    if (quantity < 1) {
+                        quantityInput.value = 1;
+                    } else if (quantity > currentStock) {
+                        quantityInput.value = currentStock;
+                    }
+                    updateQuantityButtons();
+                });
+
+                // مدیریت نامبرپد تخفیف
+                discountNumberPad.addEventListener('click', function(e) {
+                    const target = e.target;
+                    if (target.dataset.number) {
+                        discountValue.value += target.dataset.number;
+                    } else if (target.classList.contains('btn-clear')) {
+                        discountValue.value = '';
+                    } else if (target.classList.contains('btn-enter')) {
+                        discountValue.blur();
+                    }
+                });
+
                 // مدیریت افزودن به سبد خرید از مودال
                 confirmAddToCart.addEventListener('click', function() {
                     if (productForm.checkValidity()) {
@@ -1125,6 +1200,7 @@
                         addToCart();
                         productModal.hide();
                         productForm.reset();
+                        updateQuantityButtons();
                     } else {
                         productForm.reportValidity();
                     }
@@ -1210,37 +1286,6 @@
                     }
                 });
 
-                // مدیریت نامبرپد
-                let activeInput = null;
-                [discountValue, cardNumber].forEach(input => {
-                    input.addEventListener('focus', function() {
-                        activeInput = input;
-                        numberPad.classList.add('show');
-                    });
-                });
-
-                numberPad.addEventListener('click', function(e) {
-                    if (!activeInput) return;
-                    const target = e.target;
-                    if (target.dataset.number) {
-                        activeInput.value += target.dataset.number;
-                    } else if (target.classList.contains('btn-clear')) {
-                        activeInput.value = '';
-                    } else if (target.classList.contains('btn-enter')) {
-                        numberPad.classList.remove('show');
-                        activeInput = null;
-                    }
-                });
-
-                // بستن نامبرپد با کلیک خارج از آن
-                document.addEventListener('click', function(e) {
-                    if (!numberPad.contains(e.target) && !discountValue.contains(e.target) && !cardNumber
-                        .contains(e.target)) {
-                        numberPad.classList.remove('show');
-                        activeInput = null;
-                    }
-                });
-
                 // مدیریت ریسپانسیو
                 function handleResponsive() {
                     if (window.innerWidth <= 992) {
@@ -1272,6 +1317,7 @@
                     const dropdownItems = document.querySelectorAll('.category-dropdown .dropdown-item');
                     const selectedCategory = selectedItem.textContent.trim();
                     const productCards = document.querySelectorAll('#productsContainer .col');
+
                     dropdownItems.forEach(item => item.classList.remove('active'));
                     selectedItem.classList.add('active');
 
@@ -1279,14 +1325,15 @@
                     dropdownToggle.innerHTML = `<i class="bi bi-list-ul me-2"></i> ${selectedCategory}`;
 
                     productCards.forEach(card => {
-                        const category = card.getAttribute('data-category');
-                        if (category === selectedCategory) {
+                        const category = card.getAttribute('data-category')?.trim();
+                        if (selectedCategory === 'همه دسته‌بندی‌ها') {
                             card.style.display = 'block';
                         } else {
-                            card.style.display = 'none';
+                            card.style.display = (category === selectedCategory) ? 'block' : 'none';
                         }
                     });
                 }
+
 
                 function showProductModal(productCard) {
                     currentProduct = productCard;
@@ -1299,13 +1346,17 @@
                     stockInfo.textContent = `موجودی: ${currentStock} عدد`;
                     quantityInput.max = currentStock;
                     quantityInput.value = 1;
+                    updateQuantityButtons();
 
                     productModal.show();
                 }
 
                 function addToCart() {
                     const productName = currentProduct.querySelector('.card-title').textContent;
-                    const productPrice = parseInt(currentProduct.querySelector('.add-to-cart').dataset.price);
+                    const rawPriceText = currentProduct.querySelector('.card-text').textContent;
+                    const cleanPriceText = persianToEnglishDigits(rawPriceText.replace(/[^۰-۹]/g,
+                        '')); // حذف حروف و تبدیل عدد
+                    const productPrice = parseInt(cleanPriceText) || 0; // اگر عدد نبود، پیش‌فرض ۰
                     const productImage = currentProduct.querySelector('.card-img-top').src;
                     const size = sizeSelect.value;
                     const color = colorSelect.value;
@@ -1323,8 +1374,8 @@
                     cart.push(cartItem);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     updateCart();
-                    // alert(`محصول "${productName}" با سایز ${size} و رنگ ${color} به سبد خرید اضافه شد`);
                 }
+
 
                 function calculateSubtotal() {
                     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -1336,25 +1387,29 @@
                     const finalTotal = subtotal - discountAmount;
 
                     cart.forEach((item, index) => {
-                        const itemTotal = item.price * item.quantity;
+                        const itemPrice = item.price || 0;
+                        const itemQuantity = item.quantity || 0;
+                        const itemTotal = itemPrice * itemQuantity;
+
                         cartItems.innerHTML += `
-                            <div class="cart-item">
-                                <img src="${item.image}" alt="${item.name}">
-                                <div class="cart-item-details">
-                                    <h6>${item.name}</h6>
-                                    <p>سایز: ${item.size} | رنگ: ${item.color} | تعداد: ${item.quantity}</p>
-                                    <p>قیمت واحد: ${item.price.toLocaleString('fa-IR')} تومان</p>
-                                    <p>جمع: ${itemTotal.toLocaleString('fa-IR')} تومان</p>
-                                </div>
-                                <i class="bi bi-trash cart-item-remove" data-index="${index}"></i>
-                            </div>
-                        `;
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h6>${item.name}</h6>
+                    <p>سایز: ${item.size} | رنگ: ${item.color} | تعداد: ${itemQuantity}</p>
+                    <p>قیمت واحد: ${itemPrice.toLocaleString('fa-IR')} تومان</p>
+                    <p>جمع: ${itemTotal.toLocaleString('fa-IR')} تومان</p>
+                </div>
+                <i class="bi bi-trash cart-item-remove" data-index="${index}"></i>
+            </div>
+        `;
                     });
 
                     cartSubtotal.textContent = `جمع کل: ${subtotal.toLocaleString('fa-IR')} تومان`;
                     cartDiscount.textContent = `تخفیف: ${discountAmount.toLocaleString('fa-IR')} تومان`;
                     cartFinalTotal.textContent = `مبلغ نهایی: ${finalTotal.toLocaleString('fa-IR')} تومان`;
                 }
+
 
             } catch (error) {
                 console.error('خطا در اجرای اسکریپت:', error);
