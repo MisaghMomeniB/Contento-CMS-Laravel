@@ -440,6 +440,13 @@
             font-size: 1.25rem;
         }
 
+        .cart-items-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 300px); /* Adjust based on header and footer height */
+            margin-bottom: 15px;
+        }
+
         .cart-item {
             display: flex;
             align-items: center;
@@ -584,52 +591,6 @@
             opacity: 0.6;
         }
 
-        .discount-number-pad {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            margin-bottom: 10px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 10px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .discount-number-pad .btn {
-            font-size: 1rem;
-            padding: 5px;
-            border-radius: 8px;
-            background: #f8f9fa;
-            border: 1px solid var(--text-muted);
-            transition: all 0.1s ease;
-        }
-
-        .discount-number-pad .btn:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        .discount-number-pad .btn-clear {
-            background: #dc3545;
-            color: white;
-            border: none;
-        }
-
-        .discount-number-pad .btn-clear:hover {
-            background: #b02a37;
-        }
-
-        .discount-number-pad .btn-enter {
-            background: #28a745;
-            color: white;
-            border: none;
-        }
-
-        .discount-number-pad .btn-enter:hover {
-            background: #1e7e34;
-        }
-
         @media (max-width: 992px) {
             .sidebar {
                 transform: translateX(100%);
@@ -699,11 +660,6 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
-            }
-
-            .discount-number-pad .btn {
-                font-size: 1rem;
-                padding: 10px;
             }
         }
 
@@ -800,23 +756,9 @@
                     aria-label="کد محصول">
             </div>
         </div>
-        <div id="cartItems"></div>
+        <div class="cart-items-container" id="cartItems"></div>
         <div class="cart-footer">
             <div class="cart-discount">
-                <div class="discount-number-pad">
-                    <button class="btn" data-number="1">۱</button>
-                    <button class="btn" data-number="2">۲</button>
-                    <button class="btn" data-number="3">۳</button>
-                    <button class="btn" data-number="4">۴</button>
-                    <button class="btn" data-number="5">۵</button>
-                    <button class="btn" data-number="6">۶</button>
-                    <button class="btn" data-number="7">۷</button>
-                    <button class="btn" data-number="8">۸</button>
-                    <button class="btn" data-number="9">۹</button>
-                    <button class="btn btn-clear">پاک</button>
-                    <button class="btn" data-number="0">۰</button>
-                    <button class="btn btn-enter">تأیید</button>
-                </div>
                 <div class="d-flex gap-2">
                     <select class="form-select" id="discountType">
                         <option value="percentage">درصد</option>
@@ -1096,7 +1038,6 @@
                 const confirmPayment = document.getElementById('confirmPayment');
                 const increaseQuantity = document.getElementById('increaseQuantity');
                 const decreaseQuantity = document.getElementById('decreaseQuantity');
-                const discountNumberPad = document.querySelector('.discount-number-pad');
                 let currentProduct = null;
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let currentStock = 0;
@@ -1175,18 +1116,6 @@
                         quantityInput.value = currentStock;
                     }
                     updateQuantityButtons();
-                });
-
-                // مدیریت نامبرپد تخفیف
-                discountNumberPad.addEventListener('click', function(e) {
-                    const target = e.target;
-                    if (target.dataset.number) {
-                        discountValue.value += target.dataset.number;
-                    } else if (target.classList.contains('btn-clear')) {
-                        discountValue.value = '';
-                    } else if (target.classList.contains('btn-enter')) {
-                        discountValue.blur();
-                    }
                 });
 
                 // مدیریت افزودن به سبد خرید از مودال
@@ -1334,7 +1263,6 @@
                     });
                 }
 
-
                 function showProductModal(productCard) {
                     currentProduct = productCard;
                     const productName = productCard.querySelector('.card-title').textContent;
@@ -1376,7 +1304,6 @@
                     updateCart();
                 }
 
-
                 function calculateSubtotal() {
                     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
                 }
@@ -1392,24 +1319,23 @@
                         const itemTotal = itemPrice * itemQuantity;
 
                         cartItems.innerHTML += `
-            <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-details">
-                    <h6>${item.name}</h6>
-                    <p>سایز: ${item.size} | رنگ: ${item.color} | تعداد: ${itemQuantity}</p>
-                    <p>قیمت واحد: ${itemPrice.toLocaleString('fa-IR')} تومان</p>
-                    <p>جمع: ${itemTotal.toLocaleString('fa-IR')} تومان</p>
-                </div>
-                <i class="bi bi-trash cart-item-remove" data-index="${index}"></i>
-            </div>
-        `;
+                            <div class="cart-item">
+                                <img src="${item.image}" alt="${item.name}">
+                                <div class="cart-item-details">
+                                    <h6>${item.name}</h6>
+                                    <p>سایز: ${item.size} | رنگ: ${item.color} | تعداد: ${itemQuantity}</p>
+                                    <p>قیمت واحد: ${itemPrice.toLocaleString('fa-IR')} تومان</p>
+                                    <p>جمع: ${itemTotal.toLocaleString('fa-IR')} تومان</p>
+                                </div>
+                                <i class="bi bi-trash cart-item-remove" data-index="${index}"></i>
+                            </div>
+                        `;
                     });
 
                     cartSubtotal.textContent = `جمع کل: ${subtotal.toLocaleString('fa-IR')} تومان`;
                     cartDiscount.textContent = `تخفیف: ${discountAmount.toLocaleString('fa-IR')} تومان`;
                     cartFinalTotal.textContent = `مبلغ نهایی: ${finalTotal.toLocaleString('fa-IR')} تومان`;
                 }
-
 
             } catch (error) {
                 console.error('خطا در اجرای اسکریپت:', error);
