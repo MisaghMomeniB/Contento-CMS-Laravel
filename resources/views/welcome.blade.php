@@ -21,18 +21,18 @@
       --text-muted: #6b7280;
       --bg-light: #f8fafd;
       --text-dark: #1f2a44;
-      --sidebar-width: 300px;
-      --collapsed-width: 80px;
-      --toggle-btn-size: 42px;
-      --content-padding: 35px;
-      --cart-width: 600px;
+      --sidebar-width: 260px;
+      --collapsed-width: 70px;
+      --toggle-btn-size: 36px;
+      --content-padding: 25px;
+      --cart-width: 500px;
       --transition-speed: 0.45s;
       --easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
       --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
       --shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.2);
-      --font-size-base: 1rem;
+      --font-size-base: 0.9rem;
     }
 
     body {
@@ -45,15 +45,15 @@
       font-size: var(--font-size-base);
     }
 
-    /* سایر استایل‌ها بدون تغییر */
     .barcode-tab {
       background-color: var(--primary-color);
-      padding: 15px;
+      padding: 8px;
       color: white;
-      border-radius: 10px;
+      border-radius: 6px;
       border: none;
-      margin: 10px;
+      margin: 6px;
       transition: background-color 0.2s ease;
+      font-size: 0.8rem;
     }
 
     .barcode-tab:hover {
@@ -61,24 +61,25 @@
     }
 
     .barcode-tab i {
-      margin-right: 10px;
+      margin-right: 6px;
     }
 
     .payment-methods-container {
       background-color: #ffffff;
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: 6px;
+      padding: 10px;
       box-shadow: var(--shadow-sm);
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .payment-method {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 8px;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 5px;
       transition: background-color 0.2s ease;
+      margin-bottom: 6px;
     }
 
     .payment-method:hover {
@@ -88,7 +89,7 @@
     .payment-method label {
       color: var(--text-dark);
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       cursor: pointer;
       flex-grow: 1;
     }
@@ -98,10 +99,10 @@
     }
 
     .payment-method .custom-checkbox {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       border: 2px solid var(--text-muted);
-      border-radius: 4px;
+      border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -116,7 +117,7 @@
 
     .payment-method .custom-checkbox i {
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       opacity: 0;
       transition: opacity 0.2s ease;
     }
@@ -126,48 +127,48 @@
     }
 
     .payment-method .payment-amount-input {
-      width: 120px;
-      padding: 8px;
-      font-size: 0.85rem;
-      border-radius: 6px;
+      width: 100px;
+      padding: 5px;
+      font-size: 0.75rem;
+      border-radius: 4px;
       border: 1px solid var(--text-muted);
       display: none;
       transition: all 0.2s ease;
     }
 
-    .payment-method .payment-amount-input.show {
+    .payment-method .form-check-input:checked + .custom-checkbox + label + .payment-amount-input {
       display: inline-block;
     }
 
     .payment-method .payment-amount-input:focus {
       border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(60, 85, 212, 0.2);
+      box-shadow: 0 0 0 2px rgba(60, 85, 212, 0.2);
     }
 
     .search-bar {
-      max-width: 500px;
+      max-width: 350px;
       margin: auto;
     }
 
     .barcode-section {
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 6px;
     }
 
     .form-label {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--text-dark);
       font-weight: 500;
+      margin-bottom: 5px;
     }
 
     .form-control,
     .form-select {
-      border-radius: 8px;
+      border-radius: 5px;
       border: 1px solid var(--text-muted);
-      padding: 8px 12px;
-      font-size: 0.9rem;
-      margin-right: 12px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
       transition: all 0.2s ease;
       background-color: white;
     }
@@ -175,19 +176,19 @@
     .form-control:focus,
     .form-select:focus {
       border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(60, 85, 212, 0.2);
+      box-shadow: 0 0 0 2px rgba(60, 85, 212, 0.2);
       outline: none;
     }
 
     .form-control::placeholder {
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     .dropdown-menu {
-      padding: 5px;
+      padding: 3px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
     .sidebar {
@@ -214,7 +215,7 @@
     }
 
     .sidebar-header {
-      padding: 28px 20px;
+      padding: 20px 15px;
       background: rgba(0, 0, 0, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       text-align: center;
@@ -224,7 +225,7 @@
     }
 
     .sidebar.collapsed .sidebar-header {
-      padding: 20px 0;
+      padding: 15px 0;
       background: transparent;
       border-bottom: none;
     }
@@ -244,25 +245,25 @@
     }
 
     .sidebar-title {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin: 0;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       transition: all var(--transition-speed) var(--easing);
     }
 
     .sidebar-subtitle {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: rgba(255, 255, 255, 0.7);
-      margin-top: 6px;
+      margin-top: 4px;
       transition: all var(--transition-speed) var(--easing);
     }
 
     .sidebar-toggle {
       position: absolute;
-      left: -21px;
+      left: -18px;
       top: 50%;
-      margin-top: 10px;
+      margin-top: 8px;
       transform: translateY(-50%);
       background: var(--primary-color);
       color: white;
@@ -275,7 +276,6 @@
       cursor: pointer;
       transition: all var(--transition-speed) var(--easing);
       box-shadow: var(--shadow-md);
-      z-index: 1051;
       border: 2px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -301,25 +301,25 @@
     .sidebar-nav {
       flex-grow: 1;
       overflow-y: auto;
-      margin-top: 10px;
-      padding: 15px 12px;
+      margin-top: 6px;
+      padding: 10px 8px;
       transition: all var(--transition-speed) var(--easing);
     }
 
     .sidebar.collapsed .sidebar-nav {
-      padding: 15px 5px;
+      padding: 10px 3px;
     }
 
     .nav-item {
       position: relative;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
 
     .nav-link {
       color: var(--text-light);
-      font-size: 0.95rem;
-      padding: 14px 16px;
-      border-radius: 8px;
+      font-size: 0.85rem;
+      padding: 10px 12px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       transition: all 0.25s ease;
@@ -339,16 +339,16 @@
     }
 
     .nav-icon {
-      margin-left: 10px;
-      font-size: 1.2rem;
-      min-width: 26px;
+      margin-left: 6px;
+      font-size: 1rem;
+      min-width: 22px;
       text-align: center;
       transition: all var(--transition-speed) var(--easing);
     }
 
     .sidebar.collapsed .nav-icon {
       margin-left: 0;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
 
     .nav-text {
@@ -371,20 +371,20 @@
       transform: translateY(-50%);
       background: var(--primary-dark);
       color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 0.85rem;
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-size: 0.75rem;
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
       transition: all 0.2s ease;
-      margin-right: 15px;
+      margin-right: 10px;
       box-shadow: var(--shadow-sm);
     }
 
     .sidebar.collapsed .nav-item:hover::after {
       opacity: 1;
-      margin-right: 10px;
+      margin-right: 6px;
     }
 
     .dropdown-submenu {
@@ -392,13 +392,13 @@
     }
 
     .dropdown-submenu .dropdown-toggle::after {
-      content: '\f078'; /* آیکون bi-chevron-down */
+      content: '\f078';
       font-family: 'Bootstrap Icons';
       margin-left: auto;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.8);
       transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      padding-left: 8px;
+      padding-left: 6px;
     }
 
     .dropdown-submenu.show .dropdown-toggle::after {
@@ -409,7 +409,7 @@
     .dropdown-submenu .dropdown-menu {
       position: static;
       width: 100%;
-      margin-top: 5px;
+      margin-top: 3px;
       padding: 0;
       border: none;
       background: transparent;
@@ -420,21 +420,21 @@
     }
 
     .dropdown-submenu.show .dropdown-menu {
-      max-height: 300px;
+      max-height: 200px;
       transition: max-height 0.4s var(--easing);
     }
 
     .dropdown-submenu .dropdown-item {
       color: var(--text-light);
-      font-size: 0.9rem;
-      padding: 10px 30px;
-      border-radius: 6px;
+      font-size: 0.8rem;
+      padding: 6px 20px;
+      border-radius: 4px;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
       background: rgba(255, 255, 255, 0.05);
       margin: 2px 0;
-      transform: translateY(10px);
+      transform: translateY(6px);
       opacity: 0;
       transition: transform 0.3s var(--easing), opacity 0.3s ease;
     }
@@ -485,9 +485,9 @@
       background-color: var(--primary-color);
       color: white;
       border: none;
-      border-radius: 20px;
-      padding: 12px 16px;
-      font-size: 0.9rem;
+      border-radius: 15px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
       transition: all 0.2s ease;
     }
 
@@ -496,17 +496,17 @@
     }
 
     .category-dropdown .dropdown-menu {
-      border-radius: 10px;
+      border-radius: 6px;
       box-shadow: var(--shadow-lg);
       border: none;
-      padding: 5px;
+      padding: 3px;
     }
 
     .category-dropdown .dropdown-item {
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-radius: 4px;
+      padding: 6px 8px;
       margin: 2px 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       transition: all 0.2s ease;
     }
 
@@ -521,9 +521,9 @@
 
     .product-card {
       position: relative;
-      height: 200px;
+      height: 160px;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
@@ -543,7 +543,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 8px;
       transition: transform 0.3s ease;
     }
 
@@ -556,15 +556,15 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 50px);
-      padding: 8px 10px;
+      background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 35px);
+      padding: 6px 7px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     .product-card .card-title {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 700;
       margin: 0;
       color: var(--text-light);
@@ -572,14 +572,14 @@
     }
 
     .product-card .product-number {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 500;
       color: var(--text-light);
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     }
 
     .product-card .card-text {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       font-weight: 600;
       margin: 0;
       color: var(--text-light);
@@ -587,7 +587,7 @@
     }
 
     .product-card .card-text i {
-      margin-left: 4px;
+      margin-left: 3px;
     }
 
     .cart-sidebar {
@@ -598,7 +598,7 @@
       top: 0;
       background: var(--bg-light);
       border-left: 1px solid var(--text-muted);
-      padding: 20px;
+      padding: 12px;
       transition: all var(--transition-speed) var(--easing);
       z-index: 1049;
       box-shadow: var(--shadow-lg);
@@ -615,27 +615,28 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--text-muted);
-      padding-bottom: 15px;
-      margin-bottom: 15px;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .cart-header h3 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
+      margin: 0;
     }
 
     .cart-items-container {
       flex-grow: 1;
       overflow-y: auto;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .cart-item {
       display: flex;
       align-items: center;
-      padding: 10px;
+      padding: 8px;
       border-bottom: 1px solid var(--text-muted);
-      margin-bottom: 10px;
-      border-radius: 8px;
+      margin-bottom: 6px;
+      border-radius: 6px;
       background: #ffffff;
       transition: all 0.2s ease;
     }
@@ -645,11 +646,11 @@
     }
 
     .cart-item img {
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
       object-fit: cover;
-      margin-left: 10px;
-      border-radius: 5px;
+      margin-left: 6px;
+      border-radius: 3px;
     }
 
     .cart-item-details {
@@ -657,20 +658,21 @@
     }
 
     .cart-item-details h6 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      margin-bottom: 3px;
     }
 
     .cart-item-details p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
 
     .cart-item-remove {
       cursor: pointer;
       color: #dc3545;
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: color 0.2s ease;
     }
 
@@ -680,30 +682,31 @@
 
     .cart-footer {
       margin-top: auto;
-      padding-top: 15px;
-      height: auto;
+      padding-top: 12px;
       border-top: 1px solid var(--text-muted);
     }
 
     .cart-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .cart-discount,
     .payment-methods-container,
     .user-selection {
       background-color: #ffffff;
-      text-align: center;
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: 6px;
+      padding: 10px;
       box-shadow: var(--shadow-sm);
+      flex: 1 1 calc(50% - 5px);
+      min-width: 200px;
     }
 
     .cart-discount .row {
       margin-bottom: 0;
+      align-items: center;
     }
 
     .cart-discount select,
@@ -711,13 +714,16 @@
     .user-selection input,
     .user-selection select {
       flex: 1;
+      margin-bottom: 0;
+      font-size: 0.75rem;
+      padding: 5px;
     }
 
     .cart-discount .btn,
     .user-selection .btn {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-      border-radius: 8px;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 6px;
       transition: all 0.2s ease;
     }
 
@@ -728,8 +734,8 @@
     }
 
     .cart-total-details p {
-      font-size: 1rem;
-      margin-bottom: 5px;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
       color: var(--text-dark);
     }
 
@@ -738,17 +744,17 @@
     }
 
     .cart-total-details .final-total {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: bold;
       color: var(--primary-color);
     }
 
     .cart-pay-btn {
       width: 100%;
-      font-size: 1rem;
-      padding: 12px;
-      border-radius: 10px;
-      margin-top: 15px;
+      font-size: 0.9rem;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 10px;
       background-color: var(--primary-color);
       border: none;
       transition: background-color 0.2s ease;
@@ -760,20 +766,20 @@
 
     .quantity-control {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
     }
 
     .quantity-btn {
-      width: 48px;
-      height: 48px;
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: bold;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
     }
@@ -808,21 +814,24 @@
 
     .user-selection .input-group {
       position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .user-selection .form-control {
-      padding-left: 30px;
+      padding-left: 28px;
     }
 
     .user-selection .clear-search {
       position: absolute;
-      left: 8px;
+      left: 6px;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       display: none;
       z-index: 10;
@@ -837,15 +846,19 @@
     }
 
     .user-selection .search-feedback {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-      margin-top: 5px;
-      min-height: 1.2rem;
+      margin-top: 6px;
+      min-height: 1rem;
+    }
+
+    .user-selection .form-select {
+      margin-top: 8px;
     }
 
     .user-selection .form-select option {
-      padding: 8px;
-      font-size: 0.9rem;
+      padding: 6px;
+      font-size: 0.75rem;
     }
 
     .user-selection .form-select option.matched {
@@ -870,7 +883,7 @@
 
       .main-content {
         margin-right: var(--cart-width);
-        padding: 20px;
+        padding: 12px;
       }
 
       .main-content.expanded {
@@ -878,12 +891,12 @@
       }
 
       .sidebar-toggle {
-        left: -21px;
+        left: -18px;
         transform: translateY(-50%);
       }
 
       .sidebar.collapsed .sidebar-toggle {
-        left: -21px;
+        left: -18px;
         transform: translateY(-50%) rotate(180deg);
       }
 
@@ -897,35 +910,35 @@
       }
 
       .cart-options {
-        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .product-card {
-        height: 180px;
+        height: 140px;
       }
 
       .product-card .card-overlay {
-        background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 40px);
-        padding: 6px 8px;
-        gap: 3px;
+        background: linear-gradient(to top, rgba(108, 117, 125, 0.85), transparent 30px);
+        padding: 4px 6px;
+        gap: 2px;
       }
 
       .product-card .card-title {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
       }
 
       .product-card .product-number {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
       }
 
       .product-card .card-text {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
 
       .quantity-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
       }
     }
 
@@ -935,13 +948,13 @@
       }
 
       .main-content {
-        padding: 20px;
+        padding: 10px;
         margin-right: 0;
       }
 
       .barcode-section {
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
       }
 
       .barcode-section input {
@@ -951,6 +964,7 @@
       .payment-method {
         flex-direction: column;
         align-items: flex-start;
+        gap: 6px;
       }
 
       .payment-method .payment-amount-input {
@@ -959,7 +973,7 @@
 
       .user-selection .input-group {
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
       }
 
       .user-selection .input-group .form-control,
@@ -968,22 +982,43 @@
       }
 
       .user-selection .clear-search {
-        left: 12px;
+        left: 8px;
+      }
+
+      .cart-discount .row {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .cart-discount .col-5,
+      .cart-discount .col-4,
+      .cart-discount .col-3 {
+        width: 100%;
+      }
+
+      .cart-options {
+        flex-direction: column;
+      }
+
+      .cart-discount,
+      .payment-methods-container,
+      .user-selection {
+        flex: 1 1 100%;
       }
     }
 
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 4px;
     }
 
     ::-webkit-scrollbar-track {
       background: rgba(0, 0, 0, 0.1);
-      border-radius: 3px;
+      border-radius: 2px;
     }
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 3px;
+      border-radius: 2px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -1026,8 +1061,8 @@
   <div class="cart-footer">
     <div class="cart-options">
       <div class="cart-discount">
-        <label class="form-label fw-bold mb-2">تخفیف</label>
-        <div class="row g-2 align-items-end">
+        <label class="form-label fw-bold">تخفیف</label>
+        <div class="row g-2 align-items-center">
           <div class="col-5">
             <select class="form-select" id="discountType">
               <option value="percentage">درصد</option>
@@ -1044,7 +1079,7 @@
       </div>
 
       <div class="payment-methods-container">
-        <label class="form-label fw-bold mb-2">روش پرداخت</label>
+        <label class="form-label fw-bold">روش پرداخت</label>
         <div class="payment-method">
           <input class="form-check-input" type="checkbox" name="paymentOption" id="payCard" value="کارت بانکی">
           <div class="custom-checkbox">
@@ -1064,8 +1099,8 @@
       </div>
 
       <div class="user-selection">
-        <label class="form-label fw-bold mb-2">انتخاب کاربر</label>
-        <div class="input-group mb-2">
+        <label class="form-label fw-bold">انتخاب کاربر</label>
+        <div class="input-group">
           <input type="text" class="form-control" id="userSearch" placeholder="جستجو با شماره موبایل"
                  aria-label="جستجو کاربر" aria-describedby="clearSearch">
           <button class="btn btn-outline-primary" type="button" id="addUserBtn">افزودن کاربر</button>
@@ -1078,7 +1113,7 @@
       </div>
     </div>
 
-    <div class="cart-total-details mb-3">
+    <div class="cart-total-details mb-2">
       <p id="cartSubtotal">جمع کل: ۰ تومان</p>
       <p id="cartDiscount" class="discount-amount">تخفیف: ۰ تومان</p>
       <p id="cartFinalTotal" class="final-total">مبلغ قابل پرداخت : ۰ تومان</p>
@@ -1090,7 +1125,7 @@
 
 <div class="main-content" id="mainContent">
   <div class="container mt-0">
-    <div class="row mb-3">
+    <div class="row mb-2">
       <div class="col-12">
         <div class="card shadow-sm">
           <div class="card-body p-2">
@@ -1123,12 +1158,12 @@
       </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 row-cols-xxl-8 g-3"
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 row-cols-xxl-8 g-2"
          id="productsContainer">
       <div class="col" data-category="شومیز">
         <div class="product-card">
           <div class="card-img-container">
-            <img src="https://lebasesabzz.com/storage/files/9/jiji/68726c7a086ff.webp"
+            <img src="https://lebasesabzz.com/storage/files/9problematice/68726c7a086ff.webp"
                  class="card-img-top" alt="شومیز">
             <div class="card-overlay">
               <h5 class="card-title">شومیز</h5>
@@ -1232,7 +1267,7 @@
       </div>
       <div class="modal-body">
         <form id="productForm">
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="sizeSelect" class="form-label">سایز</label>
             <select class="form-select" id="sizeSelect" required>
               <option value="" disabled selected>انتخاب سایز</option>
@@ -1242,7 +1277,7 @@
               <option value="XL">XL</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="colorSelect" class="form-label">رنگ</label>
             <select class="form-select" id="colorSelect" required>
               <option value="" disabled selected>انتخاب رنگ</option>
@@ -1252,7 +1287,7 @@
               <option value="سفید">سفید</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="quantityInput" class="form-label">تعداد</label>
             <p id="stockInfo" class="text-muted mb-2"></p>
             <div class="quantity-control">
@@ -1287,7 +1322,7 @@
       </div>
       <div class="modal-body">
         <form id="paymentForm">
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="paymentMethod" class="form-label">روش پرداخت</label>
             <select class="form-select" id="paymentMethod" required>
               <option value="" disabled selected>انتخاب روش پرداخت</option>
@@ -1296,7 +1331,7 @@
               <option value="online">پرداخت آنلاین</option>
             </select>
           </div>
-          <div class="mb-3" id="cardDetails" style="display: none;">
+          <div class="mb-2" id="cardDetails" style="display: none;">
             <label for="cardNumber" class="form-label">شماره کارت</label>
             <input type="text" class="form-control" id="cardNumber" placeholder="شماره کارت">
           </div>
@@ -1320,11 +1355,11 @@
       </div>
       <div class="modal-body">
         <form id="addUserForm">
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="userName" class="form-label">نام کاربر</label>
             <input type="text" class="form-control" id="userName" placeholder="نام کاربر" required>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="userPhone" class="form-label">شماره موبایل</label>
             <input type="tel" class="form-control" id="userPhone" placeholder="شماره موبایل" pattern="[0-9]{11}"
                    required>
