@@ -11,9 +11,13 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/pos-vone', function () {
+    return view('pos.vone');
+})->name('vone');
+
+Route::get('/pos-vtwo', function () {
+    return view('pos.vtwo');
+})->name('vtwo');
 
 Route::get('/payment', function () {
     return view('payment.test');
