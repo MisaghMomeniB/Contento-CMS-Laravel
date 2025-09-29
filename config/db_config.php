@@ -18,3 +18,9 @@ $options = [
 
 // Connection Variable
 $pdo = null;
+
+try {
+    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+} catch (PDOException $erorr) {
+    exit("DB Connection Failed " . $erorr->getMessage());
+}
